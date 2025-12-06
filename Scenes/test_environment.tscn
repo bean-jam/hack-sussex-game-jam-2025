@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbkr5iw26j277"]
+
+[ext_resource type="PackedScene" uid="uid://bqn65togivj2c" path="res://Scenes/player.tscn" id="1_ovar5"]
+[ext_resource type="PackedScene" path="res://Scenes/enemy.tscn" id="2_k0r8c"]
+[ext_resource type="PackedScene" uid="uid://dc3ba0mod3flg" path="res://Scenes/desk.tscn" id="3_ncdvc"]
+
+[node name="test-environment" type="Node2D"]
+
+[node name="Temp Background" type="ColorRect" parent="."]
+offset_right = 416.0
+offset_bottom = 216.0
+color = Color(0.1490632, 0.08018119, 3.008172e-08, 1)
+
+[node name="Player" parent="." instance=ExtResource("1_ovar5")]
+position = Vector2(208, 32)
+
+[node name="Enemy2" parent="." instance=ExtResource("2_k0r8c")]
+position = Vector2(47, 37)
+
+[node name="Enemy3" parent="." instance=ExtResource("2_k0r8c")]
+position = Vector2(135, 178)
+
+[node name="Desk" parent="." instance=ExtResource("3_ncdvc")]
+position = Vector2(166, 16)
