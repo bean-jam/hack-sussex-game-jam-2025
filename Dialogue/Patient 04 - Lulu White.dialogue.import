@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://xf7r41d53llc"
+path="res://.godot/imported/Patient 04 - Lulu White.dialogue-fcf981ae54170cdc8779f3edaabf0d3d.tres"
+
+[deps]
+
+source_file="res://Dialogue/Patient 04 - Lulu White.dialogue"
+dest_files=["res://.godot/imported/Patient 04 - Lulu White.dialogue-fcf981ae54170cdc8779f3edaabf0d3d.tres"]
+
+[params]
+
+defaults=true

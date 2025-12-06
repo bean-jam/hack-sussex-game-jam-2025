@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dtl0fe8wx3qf0"
+path="res://.godot/imported/Patient 10 - Gustave Boudreaux.dialogue-e5aa2e62ace0b43dbad9a835bc1a7576.tres"
+
+[deps]
+
+source_file="res://Dialogue/Patient 10 - Gustave Boudreaux.dialogue"
+dest_files=["res://.godot/imported/Patient 10 - Gustave Boudreaux.dialogue-e5aa2e62ace0b43dbad9a835bc1a7576.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Potion" load_steps=5 format=3 uid="uid://c54qdveg835yt"]
+
+[ext_resource type="Script" uid="uid://de2x6nu24bxkm" path="res://Scripts/item.gd" id="1_u6d4u"]
+[ext_resource type="Resource" path="res://Scripts/Ingredients/rat_tail.tres" id="2_pilfk"]
+[ext_resource type="Resource" path="res://Scripts/Ingredients/eagle_eyeball.tres" id="3_ft8c2"]
+[ext_resource type="Script" uid="uid://d3neoyj8wgaax" path="res://Scripts/potion.gd" id="4_ionh8"]
+
+[resource]
+script = ExtResource("4_ionh8")
+required_items = Array[ExtResource("1_u6d4u")]([ExtResource("2_pilfk"), ExtResource("2_pilfk"), ExtResource("2_pilfk"), ExtResource("3_ft8c2"), ExtResource("3_ft8c2")])
+item_name = "Potion of Yellow Fever Cure"
+description = "Potent herbal brew to break the deadly \"Bronze John.\""
+metadata/_custom_type_script = "uid://d3neoyj8wgaax"

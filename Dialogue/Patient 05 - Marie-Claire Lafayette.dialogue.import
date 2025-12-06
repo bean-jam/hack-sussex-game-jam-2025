@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bqsj576ns3uf8"
+path="res://.godot/imported/Patient 05 - Marie-Claire Lafayette.dialogue-83b4340463ba467e0f715491e8428aab.tres"
+
+[deps]
+
+source_file="res://Dialogue/Patient 05 - Marie-Claire Lafayette.dialogue"
+dest_files=["res://.godot/imported/Patient 05 - Marie-Claire Lafayette.dialogue-83b4340463ba467e0f715491e8428aab.tres"]
+
+[params]
+
+defaults=true

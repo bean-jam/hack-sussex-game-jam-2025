@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://brm2a6mdcj1vy"
+path="res://.godot/imported/Patient 02 - Louise de Chevaux.dialogue-5b3424de818cb405b6676e6b6e3f21e1.tres"
+
+[deps]
+
+source_file="res://Dialogue/Patient 02 - Louise de Chevaux.dialogue"
+dest_files=["res://.godot/imported/Patient 02 - Louise de Chevaux.dialogue-5b3424de818cb405b6676e6b6e3f21e1.tres"]
+
+[params]
+
+defaults=true
