@@ -4,7 +4,7 @@ class_name BaseCustomer
 # --- SETTINGS ---
 @export var movement_speed: float = 100.0
 @export var desk_position_x: float = 208.0 
-@export var spawn_position_x: float = 500.0 
+@export var spawn_position_x: float = 500.0
 
 # TARGET: We want to reach -100 (Left side of screen)
 @export var despawn_position_x: float = -100.0 
@@ -69,15 +69,14 @@ func _on_delivery_result(was_successful: bool):
 		if was_successful:
 			print("Customer: Thank you!")
 			
-			# Let the player know to drop the item (visuals)
-			# You might handle this in Player, but just in case:
-			# player.drop_item() 
 			
 			current_state = State.WALKING_OUT
 			order_bubble.visible = false
 		else:
 			print("Customer: This isn't what I asked for!")
 			# Optional: Angry animation?
+			current_state = State.WALKING_OUT
+			order_bubble.visible = false
 
 # --- SETUP FUNCTION ---
 func setup_order(random_potion: Item):

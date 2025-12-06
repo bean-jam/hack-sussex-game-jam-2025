@@ -12,6 +12,13 @@ const SPEED = 150.0
 const JUMP_VELOCITY = -400.0
 @export var lerp_amount = 0.1
 
+func _ready() -> void:
+	SignalBus.delivery_result.connect(_on_delivery_result)
+	
+
+func _on_delivery_result(was_successful: bool):
+	drop_item()
+
 func _physics_process(delta):
 	# Movement
 	var input_vector := Input.get_vector("move_left", "move_right", "move_up", "move_down")
