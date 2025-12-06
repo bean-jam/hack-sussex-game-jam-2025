@@ -2,10 +2,12 @@ extends Area2D
 
 # Movement speed (random range)
 @export var speed: int = 50
+@export var ceiling_y: float = 100.0
+@export var floor_y: float = 210.0
 
 # Current direction of movement
 var velocity: Vector2 = Vector2.ZERO
-var screen_size: Vector2
+var screen_size = get_viewport_rect().size
 var direction: int = 1 # 1 for right, -1 for left
 signal rat_squished
 
@@ -17,6 +19,15 @@ func _ready():
 # Called every frame
 func _process(delta):
 	position += velocity * speed * delta
+	if position.y < ceiling_y:
+		position.y = ceiling_y  # Snap rat back to the ceiling line
+		if velocity.y < 0:
+			velocity.y *= -1
+	
+	if position.y >= floor_y:
+		position.y = floor_y
+		velocity.y *= -1
+		
 
 	check_offscreen_despawn()
 
@@ -34,6 +45,8 @@ func despawn():
 func change_direction():
 	var random_angle = randf() * 2 * PI
 	velocity = Vector2(cos(random_angle), sin(random_angle))
+	#if velocity.y < 200:
+		#velocity.y = abs(velocity.y)
 	velocity.y = velocity.y / 5.0
 	velocity = velocity.normalized()
 	direction = 1 if velocity.x >= 0 else -1
