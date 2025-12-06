@@ -1,7 +1,13 @@
-[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://bd67w7j5dkj5d"]
+[gd_resource type="Resource" script_class="Potion" load_steps=5 format=3 uid="uid://bd67w7j5dkj5d"]
 
 [ext_resource type="Script" uid="uid://de2x6nu24bxkm" path="res://Scripts/item.gd" id="1_cn6e8"]
+[ext_resource type="Resource" path="res://Scripts/Ingredients/eagle_eyeball.tres" id="2_6begq"]
+[ext_resource type="Script" uid="uid://d3neoyj8wgaax" path="res://Scripts/potion.gd" id="2_epvsk"]
+[ext_resource type="Resource" path="res://Scripts/Ingredients/viper_venom.tres" id="3_dlnjm"]
 
 [resource]
-script = ExtResource("1_cn6e8")
-metadata/_custom_type_script = "uid://de2x6nu24bxkm"
+script = ExtResource("2_epvsk")
+required_items = Array[ExtResource("1_cn6e8")]([ExtResource("2_6begq"), ExtResource("2_6begq"), ExtResource("2_6begq"), ExtResource("2_6begq"), ExtResource("2_6begq"), ExtResource("2_6begq"), ExtResource("2_6begq"), ExtResource("3_dlnjm"), ExtResource("3_dlnjm")])
+item_name = "Portion of Elixir of Youth"
+description = "Rare potion to smooth wrinkles and restore vitality."
+metadata/_custom_type_script = "uid://d3neoyj8wgaax"

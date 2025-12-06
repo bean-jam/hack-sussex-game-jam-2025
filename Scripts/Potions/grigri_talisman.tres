@@ -1,7 +1,13 @@
-[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://c20b0rcfryks0"]
+[gd_resource type="Resource" script_class="Potion" load_steps=5 format=3 uid="uid://c20b0rcfryks0"]
 
 [ext_resource type="Script" uid="uid://de2x6nu24bxkm" path="res://Scripts/item.gd" id="1_3aym4"]
+[ext_resource type="Script" uid="uid://d3neoyj8wgaax" path="res://Scripts/potion.gd" id="2_hebkb"]
+[ext_resource type="Resource" uid="uid://cviwqynmxmqa5" path="res://Scripts/Ingredients/alligator_tooth.tres" id="2_vs24n"]
+[ext_resource type="Resource" path="res://Scripts/Ingredients/toad_leg.tres" id="3_lfbom"]
 
 [resource]
-script = ExtResource("1_3aym4")
-metadata/_custom_type_script = "uid://de2x6nu24bxkm"
+script = ExtResource("2_hebkb")
+required_items = Array[ExtResource("1_3aym4")]([ExtResource("2_vs24n"), ExtResource("3_lfbom"), ExtResource("3_lfbom"), ExtResource("3_lfbom"), ExtResource("3_lfbom"), ExtResource("3_lfbom")])
+item_name = "Potion of Grigri's Talisman"
+description = "Blessed amulet bag for protection, luck, or warding evil."
+metadata/_custom_type_script = "uid://d3neoyj8wgaax"

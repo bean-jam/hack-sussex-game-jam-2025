@@ -1,7 +1,13 @@
-[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://dbx5ntmoekfix"]
+[gd_resource type="Resource" script_class="Potion" load_steps=5 format=3 uid="uid://dbx5ntmoekfix"]
 
 [ext_resource type="Script" uid="uid://de2x6nu24bxkm" path="res://Scripts/item.gd" id="1_ixfix"]
+[ext_resource type="Resource" path="res://Scripts/Ingredients/leech.tres" id="2_5y6dr"]
+[ext_resource type="Script" uid="uid://d3neoyj8wgaax" path="res://Scripts/potion.gd" id="2_u84l1"]
+[ext_resource type="Resource" path="res://Scripts/Ingredients/viper_venom.tres" id="3_cwgr1"]
 
 [resource]
-script = ExtResource("1_ixfix")
-metadata/_custom_type_script = "uid://de2x6nu24bxkm"
+script = ExtResource("2_u84l1")
+required_items = Array[ExtResource("1_ixfix")]([ExtResource("2_5y6dr"), ExtResource("2_5y6dr"), ExtResource("2_5y6dr"), ExtResource("2_5y6dr"), ExtResource("3_cwgr1")])
+item_name = "Potion of Warts & Boils"
+description = "Poultice that draws out infection and rot from skin."
+metadata/_custom_type_script = "uid://d3neoyj8wgaax"
