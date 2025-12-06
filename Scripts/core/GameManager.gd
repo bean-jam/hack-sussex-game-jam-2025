@@ -17,6 +17,7 @@ var score: int = 0
 var time_left: float
 var current_target_item: String = "" # What the customer currently waiting wants
 var is_game_active: bool = true
+var rat_score: int = 1
 
 ## Init function
 func _ready():
@@ -57,10 +58,12 @@ func _check_delivery(held_item_name):
 		current_target_item = ""
 
 ## Add points to the score per rat squished
-func _on_rat_squished(_pos):
+func _on_rat_squished():
 	# Simple bonus points
 	score += 1
-	SignalBus.score_updated.emit(score)
+	rat_score += 1
+	SignalBus.score_updated.emit(score) # Emits total score
+	SignalBus.rat_score_updated.emit(rat_score) # Emits total rat_score
 	
 func _add_money(item_name):
 	var payout = consultation_fee
