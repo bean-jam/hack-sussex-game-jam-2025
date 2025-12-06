@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dfh460hp3reqx"
+path="res://.godot/imported/Patient 03 - Etienne.dialogue-82160bab2a347ab45e07f98772ecd45e.tres"
+
+[deps]
+
+source_file="res://Dialogue/Patient 03 - Etienne.dialogue"
+dest_files=["res://.godot/imported/Patient 03 - Etienne.dialogue-82160bab2a347ab45e07f98772ecd45e.tres"]
+
+[params]
+
+defaults=true

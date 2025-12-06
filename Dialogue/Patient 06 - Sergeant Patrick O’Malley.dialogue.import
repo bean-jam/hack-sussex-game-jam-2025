@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cu4gd781luwmi"
+path="res://.godot/imported/Patient 06 - Sergeant Patrick O’Malley.dialogue-2881e924d8045454b408c2335f7b7a3e.tres"
+
+[deps]
+
+source_file="res://Dialogue/Patient 06 - Sergeant Patrick O’Malley.dialogue"
+dest_files=["res://.godot/imported/Patient 06 - Sergeant Patrick O’Malley.dialogue-2881e924d8045454b408c2335f7b7a3e.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://be6j1hyfywe6p"
+path="res://.godot/imported/Patient 07 - 'Silky' Silas Croft.dialogue-7500293a205e3900c6c0fc898392df52.tres"
+
+[deps]
+
+source_file="res://Dialogue/Patient 07 - 'Silky' Silas Croft.dialogue"
+dest_files=["res://.godot/imported/Patient 07 - 'Silky' Silas Croft.dialogue-7500293a205e3900c6c0fc898392df52.tres"]
+
+[params]
+
+defaults=true
