@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://b141md1ki01wh"]
+[gd_resource type="Resource" script_class="Potion" load_steps=3 format=3 uid="uid://b141md1ki01wh"]
 
 [ext_resource type="Script" uid="uid://de2x6nu24bxkm" path="res://Scripts/item.gd" id="1_w4pco"]
+[ext_resource type="Script" uid="uid://d3neoyj8wgaax" path="res://Scripts/potion.gd" id="2_eltol"]
 
 [resource]
-script = ExtResource("1_w4pco")
-metadata/_custom_type_script = "uid://de2x6nu24bxkm"
+script = ExtResource("2_eltol")
+metadata/_custom_type_script = "uid://d3neoyj8wgaax"
