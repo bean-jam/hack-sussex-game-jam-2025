@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://cbkr5iw26j277"]
 
 [ext_resource type="PackedScene" uid="uid://bqn65togivj2c" path="res://Scenes/player.tscn" id="1_ovar5"]
-[ext_resource type="PackedScene" path="res://Scenes/desk.tscn" id="3_ncdvc"]
-[ext_resource type="Texture2D" uid="uid://dqcsvp5wnx27r" path="res://Assets/Environment/ENVIRO.png" id="4_k0r8c"]
+[ext_resource type="Texture2D" uid="uid://dlmjmrgcbi3fl" path="res://Assets/Environment/ENVIRO_NOTABLE.png" id="1_q2a4t"]
+[ext_resource type="PackedScene" uid="uid://bo3sofng0w8s4" path="res://Scenes/desk.tscn" id="3_ncdvc"]
 [ext_resource type="Resource" uid="uid://ubqmnoky64qc" path="res://Resources/Ingredients/rat_tail.tres" id="5_3wfad"]
 [ext_resource type="PackedScene" uid="uid://bonbooj2bn18v" path="res://Scenes/item_container.tscn" id="5_ncdvc"]
 [ext_resource type="Resource" uid="uid://dym8jnd8cn8dy" path="res://Resources/Ingredients/toad_leg.tres" id="6_q2a4t"]
@@ -13,15 +13,15 @@
 
 [node name="test-environment" type="Node2D"]
 
-[node name="Enviro" type="Sprite2D" parent="."]
+[node name="EnviroNotable" type="Sprite2D" parent="."]
 position = Vector2(208, 108)
-texture = ExtResource("4_k0r8c")
+texture = ExtResource("1_q2a4t")
 
 [node name="Player" parent="." instance=ExtResource("1_ovar5")]
-position = Vector2(209, 64)
+position = Vector2(209, 80)
 
 [node name="Desk" parent="." instance=ExtResource("3_ncdvc")]
-position = Vector2(167, 55)
+position = Vector2(166, 70)
 
 [node name="RatTails" parent="." instance=ExtResource("5_ncdvc")]
 position = Vector2(65, 41)
