@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 # STATE
-var held_item: String = "" # Empty string = holding nothing
+var held_item: Item = null
 
 # NODES
 @onready var interact_ray = $InteractRay
@@ -38,23 +38,18 @@ func _attempt_interact():
 
 # --- PUBLIC FUNCTIONS (Called by other objects) ---
 
-func pickup(item_name: String):
-	held_item = item_name
-	print("Player picked up: ", held_item)
+func pickup(item_resource: Resource):
+	held_item = item_resource
+	print("Picked up: ", held_item.resource_path) # Debugging helpful for resources
 	update_visuals()
 
 func drop_item():
-	held_item = ""
-	print("Player dropped item")
+	held_item = null
 	update_visuals()
 
 func update_visuals():
-	if held_item == "":
+	if held_item == null:
 		held_item_icon.visible = false
 	else:
 		held_item_icon.visible = true
-		# Replace with icons eventually
-		held_item_icon.modulate = Color.RED 
-		
-		## Use this method to change items based on the item name
-		# held_item_icon.texture = load("res://assets/items/" + held_item + ".png")
+		held_item_icon.texture = held_item.texture
