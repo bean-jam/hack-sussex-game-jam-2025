@@ -73,6 +73,7 @@ drop={
 2d_physics/layer_2="room"
 2d_physics/layer_3="rats"
 2d_physics/layer_4="customers"
+2d_physics/layer_5="items"
 
 [rendering]
 
