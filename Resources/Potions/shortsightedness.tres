@@ -1,12 +1,15 @@
-[gd_resource type="Resource" script_class="Potion" load_steps=4 format=3 uid="uid://dojpvdv6s0rlr"]
+[gd_resource type="Resource" script_class="Potion" load_steps=5 format=3 uid="uid://dojpvdv6s0rlr"]
 
-[ext_resource type="Script" uid="uid://de2x6nu24bxkm" path="res://Scripts/item.gd" id="1_xuunb"]
-[ext_resource type="Resource" path="res://Scripts/Ingredients/eagle_eyeball.tres" id="2_jdyg4"]
-[ext_resource type="Script" uid="uid://d3neoyj8wgaax" path="res://Scripts/potion.gd" id="3_35bio"]
+[ext_resource type="Script" uid="uid://de2x6nu24bxkm" path="res://Scripts/item.gd" id="1_ln5ex"]
+[ext_resource type="Resource" uid="uid://dauog3637hj2o" path="res://Resources/Ingredients/eagle_eyeball.tres" id="2_jdyg4"]
+[ext_resource type="Script" uid="uid://d3neoyj8wgaax" path="res://Scripts/potion.gd" id="2_xuunb"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_35bio"]
+size = Vector2(8, 8)
 
 [resource]
-script = ExtResource("3_35bio")
-required_items = Array[ExtResource("1_xuunb")]([ExtResource("2_jdyg4"), ExtResource("2_jdyg4")])
-item_name = "Potion of Short-Sightedness"
-description = "Corrects vision using eagle eyeballs and clear water."
+script = ExtResource("2_xuunb")
+required_items = Array[ExtResource("1_ln5ex")]([ExtResource("2_jdyg4"), ExtResource("2_jdyg4")])
+item_name = "Shortsightedness"
+texture = SubResource("PlaceholderTexture2D_35bio")
 metadata/_custom_type_script = "uid://d3neoyj8wgaax"
