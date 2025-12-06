@@ -11,6 +11,7 @@ size = Vector2(8, 8)
 
 [node name="BaseCustomer" type="CharacterBody2D"]
 z_index = 4
+collision_layer = 8
 script = ExtResource("1_i5r1j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
