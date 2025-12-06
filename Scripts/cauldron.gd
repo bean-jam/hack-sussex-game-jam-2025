@@ -16,7 +16,7 @@ var current_ingredients: Array[Item] = []
 # Called when the player drops an item into the cauldron area
 func add_ingredient(item: Item):
 	current_ingredients.append(item)
-	print("Added %s. Total items: %d" % [item.item_name, current_ingredients.size()])
+	print("Added c%s. Total items: %d" % [item.item_name, current_ingredients.size()])
 	
 	# Optional: Check immediately after adding an item
 	# check_for_recipe_match()
