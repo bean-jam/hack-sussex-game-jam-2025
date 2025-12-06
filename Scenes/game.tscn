@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cjsrm5ao4rcjo"]
+[gd_scene load_steps=3 format=3 uid="uid://cjsrm5ao4rcjo"]
 
 [ext_resource type="PackedScene" uid="uid://bqn65togivj2c" path="res://Scenes/player.tscn" id="1_ebmjs"]
+[ext_resource type="PackedScene" uid="uid://hsoeols25sni" path="res://Scenes/enemy.tscn" id="2_qxrlw"]
 
 [node name="Game" type="Node2D"]
 
@@ -11,3 +12,9 @@ color = Color(0.1490632, 0.08018119, 3.008172e-08, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_ebmjs")]
 position = Vector2(192, 32)
+
+[node name="Enemy2" parent="." instance=ExtResource("2_qxrlw")]
+position = Vector2(47, 37)
+
+[node name="Enemy3" parent="." instance=ExtResource("2_qxrlw")]
+position = Vector2(135, 178)
