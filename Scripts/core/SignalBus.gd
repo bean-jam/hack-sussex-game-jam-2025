@@ -20,6 +20,7 @@ signal ingredient_added(ingredient_name)
 # --- GAME STATE & RATS ---
 # Emitted when a rat is clicked.
 signal rat_squished
+signal rat_score_updated(new_rat_score)
 
 # Emitted whenever points are added/removed so the GUI updates.
 signal score_updated(new_total_score)
