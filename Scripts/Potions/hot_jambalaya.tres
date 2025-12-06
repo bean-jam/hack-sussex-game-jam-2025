@@ -1,8 +1,14 @@
-[gd_resource type="Resource" script_class="Potion" load_steps=3 format=3 uid="uid://bxglt4pcjd2yt"]
+[gd_resource type="Resource" script_class="Potion" load_steps=6 format=3 uid="uid://bxglt4pcjd2yt"]
 
 [ext_resource type="Script" uid="uid://de2x6nu24bxkm" path="res://Scripts/item.gd" id="1_ssgah"]
 [ext_resource type="Script" uid="uid://d3neoyj8wgaax" path="res://Scripts/potion.gd" id="2_e2da5"]
+[ext_resource type="Resource" uid="uid://dym8jnd8cn8dy" path="res://Scripts/Ingredients/toad_leg.tres" id="2_xl8lf"]
+[ext_resource type="Resource" uid="uid://ubqmnoky64qc" path="res://Scripts/Ingredients/rat_tail.tres" id="3_353k8"]
+[ext_resource type="Resource" uid="uid://crxjivlet67gs" path="res://Scripts/Ingredients/viper_venom.tres" id="4_s121l"]
 
 [resource]
 script = ExtResource("2_e2da5")
+required_items = Array[ExtResource("1_ssgah")]([ExtResource("2_xl8lf"), ExtResource("2_xl8lf"), ExtResource("3_353k8"), ExtResource("3_353k8"), ExtResource("3_353k8"), ExtResource("4_s121l"), ExtResource("4_s121l"), ExtResource("4_s121l"), ExtResource("4_s121l")])
+item_name = "Potion of Hot Jambalaya"
+description = "Spicy Creole rice stew to restore health and stamina."
 metadata/_custom_type_script = "uid://d3neoyj8wgaax"
