@@ -38,7 +38,7 @@ func spawn_customer():
 	get_tree().current_scene.add_child(new_customer)
 	
 	# 4. Set Position (Hard set Y to 120, X comes from Customer script)
-	new_customer.global_position.y = 120
+	new_customer.global_position.y = 130
 	
 	# 5. Handle Order
 	if possible_orders.size() > 0:
