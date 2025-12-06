@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://de2x6nu24bxkm" path="res://Scripts/item.gd" id="1_b1bt5"]
 [ext_resource type="Script" uid="uid://d3neoyj8wgaax" path="res://Scripts/potion.gd" id="2_h0em6"]
-[ext_resource type="Resource" uid="uid://bnk85jyhl0ckg" path="res://Scripts/Ingredients/ayahuasca.tres" id="2_w8g5h"]
+[ext_resource type="Resource" path="res://Scripts/Ingredients/ayahuasca.tres" id="2_w8g5h"]
 
 [resource]
 script = ExtResource("2_h0em6")

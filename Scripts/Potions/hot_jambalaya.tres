@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://de2x6nu24bxkm" path="res://Scripts/item.gd" id="1_ssgah"]
 [ext_resource type="Script" uid="uid://d3neoyj8wgaax" path="res://Scripts/potion.gd" id="2_e2da5"]
-[ext_resource type="Resource" uid="uid://dym8jnd8cn8dy" path="res://Scripts/Ingredients/toad_leg.tres" id="2_xl8lf"]
-[ext_resource type="Resource" uid="uid://ubqmnoky64qc" path="res://Scripts/Ingredients/rat_tail.tres" id="3_353k8"]
-[ext_resource type="Resource" uid="uid://crxjivlet67gs" path="res://Scripts/Ingredients/viper_venom.tres" id="4_s121l"]
+[ext_resource type="Resource" path="res://Scripts/Ingredients/toad_leg.tres" id="2_xl8lf"]
+[ext_resource type="Resource" path="res://Scripts/Ingredients/rat_tail.tres" id="3_353k8"]
+[ext_resource type="Resource" path="res://Scripts/Ingredients/viper_venom.tres" id="4_s121l"]
 
 [resource]
 script = ExtResource("2_e2da5")
