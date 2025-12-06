@@ -27,7 +27,7 @@ func _ready():
 	SignalBus.customer_at_desk.connect(_on_customer_at_desk)
 	SignalBus.attempt_delivery.connect(_check_delivery)
 	SignalBus.rat_squished.connect(_on_rat_squished)
-
+	SignalBus.rat_score_updated.connect(_on_rat_score_updated)
 
 ## What happens when a customer arrives?
 func _on_customer_at_desk(data):
@@ -62,8 +62,14 @@ func _on_rat_squished():
 	# Simple bonus points
 	score += 1
 	rat_score += 1
+	print(rat_score)
 	SignalBus.score_updated.emit(score) # Emits total score
 	SignalBus.rat_score_updated.emit(rat_score) # Emits total rat_score
+
+func _on_rat_score_updated():
+	rat_score -= 1
+	print(rat_score)
+	SignalBus.rat_score_updated.emit(rat_score)
 	
 func _add_money(item_name):
 	var payout = consultation_fee
