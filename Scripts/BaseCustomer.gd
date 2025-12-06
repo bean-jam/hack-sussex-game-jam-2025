@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name BaseCustomer
 
 # --- SETTINGS ---
-@export var movement_speed: float = 100.0
+@export var movement_speed: float = 50.0
 @export var desk_position_x: float = 208.0 # Change this to your desk's X coordinate
 @export var spawn_position_x: float = 500.0 # Off-screen right
 @export var despawn_position_x: float = -100.0 # Off-screen right

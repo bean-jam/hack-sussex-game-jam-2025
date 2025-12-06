@@ -4,8 +4,7 @@ class_name CustomerSpawner
 # DRAG YOUR CUSTOMER SCENE HERE IN INSPECTOR
 @export var customer_scene: PackedScene 
 
-# CHANGE: Type must be Array[Resource] or Array[Item] to hold a list
-@export var possible_orders: Array[Resource] 
+@export var possible_orders: Array[Potion] 
 
 @export var spawn_interval: float = 5.0
 var timer: float = 0.0
@@ -34,4 +33,5 @@ func spawn_customer():
 	get_parent().add_child(new_customer)
 	
 	# Optional: Set their Y position to match the floor
-	new_customer.global_position.y = 400
+	new_customer.global_position.y = 120
+	
