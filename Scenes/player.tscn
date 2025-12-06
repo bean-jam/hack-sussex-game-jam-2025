@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bqn65togivj2c"]
+[gd_scene load_steps=13 format=3 uid="uid://bqn65togivj2c"]
 
 [ext_resource type="Texture2D" uid="uid://g656r6ryebvo" path="res://Assets/Sprites/WITCHDOCTOR-Sheet.png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://6e524heq16j4" path="res://Scripts/player.gd" id="1_cvnsp"]
@@ -63,7 +63,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n7ghd"]
 size = Vector2(13, 32)
 
-[node name="Node2D" type="CharacterBody2D"]
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_cvnsp"]
+
+[node name="Player" type="CharacterBody2D"]
+collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_cvnsp")
 
@@ -75,3 +78,13 @@ frame_progress = 0.4836046
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_n7ghd")
+
+[node name="InteractRay" type="RayCast2D" parent="."]
+target_position = Vector2(0, -38)
+collision_mask = 16
+
+[node name="HeldItemIcon" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -24)
+scale = Vector2(6.75, 6.749997)
+texture = SubResource("PlaceholderTexture2D_cvnsp")

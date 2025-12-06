@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bo3sofng0w8s4"]
+
+[ext_resource type="Texture2D" uid="uid://d2fvb3ecmqlqe" path="res://Assets/Environment/TABLE_011.png" id="1_825yk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uil6a"]
+size = Vector2(17, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_825yk"]
+size = Vector2(14.5, 45)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ii4wa"]
+size = Vector2(65, 23)
+
+[node name="Desk" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 7
+
+[node name="Table011" type="Sprite2D" parent="."]
+position = Vector2(48, 34)
+texture = ExtResource("1_825yk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8.5, 42.5)
+shape = SubResource("RectangleShape2D_uil6a")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(88.75, 31.5)
+shape = SubResource("RectangleShape2D_825yk")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(49.5, 42.5)
+shape = SubResource("RectangleShape2D_ii4wa")

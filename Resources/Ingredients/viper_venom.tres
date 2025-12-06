@@ -1,9 +1,12 @@
-[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://crxjivlet67gs"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://crxjivlet67gs"]
 
 [ext_resource type="Script" uid="uid://de2x6nu24bxkm" path="res://Scripts/item.gd" id="1_sv77r"]
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_y3qu2"]
+
 [resource]
 script = ExtResource("1_sv77r")
-item_name = "Viper"
+item_name = "Viper Venom"
 description = "Deadly toxin extracted from snake fangs; causes paralysis."
+texture = SubResource("PlaceholderTexture2D_y3qu2")
 metadata/_custom_type_script = "uid://de2x6nu24bxkm"
