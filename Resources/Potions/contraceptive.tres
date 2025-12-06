@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Potion" load_steps=5 format=3 uid="uid://bv7cnt615wfi5"]
+
+[ext_resource type="Script" uid="uid://de2x6nu24bxkm" path="res://Scripts/item.gd" id="1_3kttm"]
+[ext_resource type="Resource" uid="uid://cviwqynmxmqa5" path="res://Scripts/Ingredients/alligator_tooth.tres" id="2_142nk"]
+[ext_resource type="Resource" path="res://Scripts/Ingredients/eagle_eyeball.tres" id="3_7rwqt"]
+[ext_resource type="Script" uid="uid://d3neoyj8wgaax" path="res://Scripts/potion.gd" id="4_kjvbb"]
+
+[resource]
+script = ExtResource("4_kjvbb")
+required_items = Array[ExtResource("1_3kttm")]([ExtResource("2_142nk"), ExtResource("2_142nk"), ExtResource("2_142nk"), ExtResource("2_142nk"), ExtResource("2_142nk"), ExtResource("3_7rwqt")])
+item_name = "Potion of Contraceptive"
+description = "Discreet herbal tea to prevent unwanted pregnancy."
+metadata/_custom_type_script = "uid://d3neoyj8wgaax"
