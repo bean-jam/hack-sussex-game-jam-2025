@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dh0apeo4yusko"
+path="res://.godot/imported/Patient 08 - Old Man Jericho.dialogue-e037c4d029fe2b04a4cd69d81300c8bc.tres"
+
+[deps]
+
+source_file="res://Dialogue/Patient 08 - Old Man Jericho.dialogue"
+dest_files=["res://.godot/imported/Patient 08 - Old Man Jericho.dialogue-e037c4d029fe2b04a4cd69d81300c8bc.tres"]
+
+[params]
+
+defaults=true

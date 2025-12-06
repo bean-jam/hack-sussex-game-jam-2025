@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://nvau4tegs6o5"
+path="res://.godot/imported/Patient 01 - Ignatius J. Reilly.dialogue-1ca3a4c6aae44b159bc45a5481f9c5ce.tres"
+
+[deps]
+
+source_file="res://Dialogue/Patient 01 - Ignatius J. Reilly.dialogue"
+dest_files=["res://.godot/imported/Patient 01 - Ignatius J. Reilly.dialogue-1ca3a4c6aae44b159bc45a5481f9c5ce.tres"]
+
+[params]
+
+defaults=true

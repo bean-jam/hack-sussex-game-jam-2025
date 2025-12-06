@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cvlsilmjilhu0"
+path="res://.godot/imported/Patient 09 - Beatrice Albright.dialogue-59acd11c79cf3a0a3bb679703e80ac7f.tres"
+
+[deps]
+
+source_file="res://Dialogue/Patient 09 - Beatrice Albright.dialogue"
+dest_files=["res://.godot/imported/Patient 09 - Beatrice Albright.dialogue-59acd11c79cf3a0a3bb679703e80ac7f.tres"]
+
+[params]
+
+defaults=true
