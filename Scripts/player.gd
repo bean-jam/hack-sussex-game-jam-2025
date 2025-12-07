@@ -50,7 +50,7 @@ func pickup(item_resource: Resource):
 	print("Picked up: ", held_item.resource_path) # Debugging helpful for resources
 	if held_item.resource_path.ends_with("rat_tail.tres"):
 		SignalBus.rat_score_updated.emit()
-	
+	SignalBus.item_picked_up.emit()
 	update_visuals()
 
 func drop_item():

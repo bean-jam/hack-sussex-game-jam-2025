@@ -86,6 +86,7 @@ func _on_rat_squished():
 	SignalBus.score_updated.emit(score)
 	SignalBus.rat_score_updated.emit(rat_score)
 
+
 func end_game():
 	is_game_active = false
 	SignalBus.day_ended.emit()

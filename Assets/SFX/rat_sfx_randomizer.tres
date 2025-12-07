@@ -1,0 +1,15 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=5 format=3 uid="uid://cb1d1c2bhlipm"]
+
+[ext_resource type="AudioStream" uid="uid://b5pggw55o2hlc" path="res://Assets/SFX/rat_1_sfx.wav" id="1_au2f0"]
+[ext_resource type="AudioStream" uid="uid://c2atqp7ojce58" path="res://Assets/SFX/rat_2_sfx.wav" id="2_v2r5n"]
+[ext_resource type="AudioStream" uid="uid://d23q7vmxygiru" path="res://Assets/SFX/Fahh Sound Effect.mp3" id="4_au2f0"]
+[ext_resource type="AudioStream" uid="uid://vt22pvhaksrh" path="res://Assets/SFX/rat_special_sfx.wav" id="4_xvj6i"]
+
+[resource]
+streams_count = 4
+stream_0/stream = ExtResource("1_au2f0")
+stream_0/weight = 2.695
+stream_1/stream = ExtResource("2_v2r5n")
+stream_2/stream = ExtResource("4_xvj6i")
+stream_2/weight = 0.1
+stream_3/stream = ExtResource("4_au2f0")

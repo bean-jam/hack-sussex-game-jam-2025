@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqk7xscv01bf4"]
+[gd_scene load_steps=3 format=3 uid="uid://dyptvgkuseve0"]
 
 [ext_resource type="AudioStream" uid="uid://po5jrnmkn1tj" path="res://Assets/Music/Clinique_Voudou (Main Theme).wav" id="1_au1jb"]
 [ext_resource type="AudioStream" uid="uid://jllheih88nnk" path="res://Assets/SFX/swamp_sfx.wav" id="2_4qbhp"]
@@ -7,9 +7,10 @@
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_au1jb")
+volume_db = -5.0
 autoplay = true
 
 [node name="SwampSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_4qbhp")
-volume_db = -20.0
+volume_db = -25.0
 autoplay = true
