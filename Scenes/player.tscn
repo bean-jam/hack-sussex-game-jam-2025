@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bqn65togivj2c"]
+[gd_scene load_steps=26 format=3 uid="uid://bqn65togivj2c"]
 
 [ext_resource type="Script" uid="uid://6e524heq16j4" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://dww7o22eb273d" path="res://Assets/Sprites/WITCHDOCTOR-BWRUN.png" id="2_vgqql"]
@@ -142,9 +142,13 @@ size = Vector2(13, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fkybt"]
 size = Vector2(25, 46.125)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x3wgy"]
+size = Vector2(20, 9)
+
 [node name="Player" type="CharacterBody2D"]
 z_index = 2
-collision_mask = 106
+collision_layer = 5
+collision_mask = 107
 motion_mode = 1
 script = ExtResource("1_cvnsp")
 
@@ -170,9 +174,17 @@ position = Vector2(0, -24)
 texture = SubResource("PlaceholderTexture2D_cvnsp")
 
 [node name="InteractionArea" type="Area2D" parent="."]
-collision_layer = 0
+collision_layer = 4
 collision_mask = 80
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 position = Vector2(0.5, -15)
 shape = SubResource("RectangleShape2D_fkybt")
+
+[node name="rat_interaction_area" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rat_interaction_area"]
+position = Vector2(0, 14)
+shape = SubResource("RectangleShape2D_x3wgy")
