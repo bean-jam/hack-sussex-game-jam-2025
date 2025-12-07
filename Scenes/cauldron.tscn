@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://447ybcm4qcv7"]
+
+[ext_resource type="Texture2D" uid="uid://dp4dxoc1agva4" path="res://Assets/Environment/FINAL_TOAD.png" id="1_2xink"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2rulr"]
+size = Vector2(44, 25)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2xink"]
+radius = 32.01562
+
+[node name="Cauldron" type="StaticBody2D"]
+collision_layer = 34
+
+[node name="Cauldron" type="Sprite2D" parent="."]
+position = Vector2(208, 108)
+texture = ExtResource("1_2xink")
+
+[node name="InteractShape" type="CollisionShape2D" parent="."]
+position = Vector2(209, 32.5)
+shape = SubResource("RectangleShape2D_2rulr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(209, 29)
+shape = SubResource("CircleShape2D_2xink")

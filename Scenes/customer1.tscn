@@ -10,6 +10,8 @@ size = Vector2(12, 17)
 size = Vector2(8, 8)
 
 [node name="BaseCustomer" type="CharacterBody2D"]
+z_index = 4
+collision_layer = 8
 script = ExtResource("1_i5r1j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -21,4 +23,5 @@ position = Vector2(2, 1)
 texture = ExtResource("1_grtl1")
 
 [node name="OrderBubble" type="Sprite2D" parent="."]
+position = Vector2(0, -13)
 texture = SubResource("PlaceholderTexture2D_i5r1j")

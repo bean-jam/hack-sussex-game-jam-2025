@@ -66,7 +66,8 @@ size = Vector2(13, 32)
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_cvnsp"]
 
 [node name="Player" type="CharacterBody2D"]
-collision_mask = 2
+z_index = 2
+collision_mask = 42
 motion_mode = 1
 script = ExtResource("1_cvnsp")
 
@@ -82,7 +83,7 @@ shape = SubResource("RectangleShape2D_n7ghd")
 [node name="InteractRay" type="RayCast2D" parent="."]
 scale = Vector2(3, 1)
 target_position = Vector2(0, -36)
-collision_mask = 16
+collision_mask = 24
 
 [node name="HeldItemIcon" type="Sprite2D" parent="."]
 visible = false
