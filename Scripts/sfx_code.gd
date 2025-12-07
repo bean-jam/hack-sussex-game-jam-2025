@@ -5,12 +5,17 @@ extends Node
 @onready var item_grab = $item_grab_sfx
 @onready var happy_sfx = $happy_sfx
 @onready var angry_sfx = $angry_sfx
+@onready var cauldron_sfx = $cauldron_sfx
+@onready var potion_sfx = $potion_sfx
+
 
 func _ready():
 	# Connect to the signals from the SignalBus
 	SignalBus.rat_squished.connect(_on_rat_squished)
 	SignalBus.item_picked_up.connect(_on_item_picked_up)
 	SignalBus.delivery_result.connect(_on_delivery_result)
+	SignalBus.ingredient_added.connect(_on_ingredient_added)
+	SignalBus.potion_made.connect(_on_potion_made)
 	
 func _on_rat_squished():
 	# Optional: Add logic here (like pitch randomization)
@@ -31,3 +36,11 @@ func _on_delivery_result(was_successful: bool):
 	else:
 		angry_sfx.pitch_scale = randf_range(0.9, 1.1)
 		angry_sfx.play()
+
+func _on_ingredient_added(item):
+	cauldron_sfx.pitch_scale = randf_range(0.9, 1.1)
+	cauldron_sfx.play()
+
+func _on_potion_made():
+	potion_sfx.pitch_scale = randf_range(0.9, 1.1)
+	potion_sfx.play()
