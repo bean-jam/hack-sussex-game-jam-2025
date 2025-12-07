@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://lvb4m3hlaty3" path="res://Scenes/ui.tscn" id="19_ff1bl"]
 [ext_resource type="PackedScene" uid="uid://dpdh7mbq21131" path="res://Scenes/room.tscn" id="19_op7ht"]
 [ext_resource type="Resource" uid="uid://c54qdveg835yt" path="res://Resources/Potions/yellow_fever_cure.tres" id="19_qryae"]
-[ext_resource type="PackedScene" uid="uid://dqk7xscv01bf4" path="res://Scenes/musicSFX.tscn" id="20_ff1bl"]
+[ext_resource type="PackedScene" path="res://Scenes/musicSFX.tscn" id="20_ff1bl"]
 
 [node name="test-environment" type="Node2D"]
 

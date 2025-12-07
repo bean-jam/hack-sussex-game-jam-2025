@@ -11,7 +11,7 @@ size = Vector2(8, 8)
 
 [resource]
 script = ExtResource("2_q1v6a")
-required_items = Array[ExtResource("1_xywrb")]([ExtResource("2_y25ff"), ExtResource("3_3vya6"), ExtResource("4_4v7x4"), ExtResource("4_4v7x4")])
+required_items = Array[ExtResource("1_xywrb")]([ExtResource("2_y25ff"), ExtResource("3_3vya6"), ExtResource("4_4v7x4")])
 item_name = "Hot Jambalaya"
 texture = SubResource("PlaceholderTexture2D_cqaud")
 metadata/_custom_type_script = "uid://d3neoyj8wgaax"
