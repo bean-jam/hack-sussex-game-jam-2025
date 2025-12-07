@@ -30,6 +30,7 @@ func _ready():
 	SignalBus.customer_at_desk.connect(_on_customer_at_desk)
 	SignalBus.attempt_delivery.connect(_check_delivery)
 	SignalBus.rat_squished.connect(_on_rat_squished)
+	SignalBus.rat_score_updated.connect(_on_rat_score_updated)
 	
 	# Careful with infinite loops! (removed self-connection for rat score)
 	# SignalBus.rat_score_updated.connect(_on_rat_score_updated) 
@@ -86,6 +87,9 @@ func _on_rat_squished():
 	SignalBus.score_updated.emit(score)
 	SignalBus.rat_score_updated.emit(rat_score)
 
+func _on_rat_score_updated():
+	rat_score -=1
+	SignalBus.rat_score_updated.emit(rat_score)
 
 func end_game():
 	is_game_active = false
