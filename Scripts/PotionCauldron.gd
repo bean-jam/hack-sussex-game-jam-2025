@@ -29,8 +29,7 @@ func interact(player):
 func _add_ingredient(item: Item):
 	current_ingredients.append(item)
 	print("Added: " + item.item_name)
-	
-	# Visuals: You could play a splash sound or add a small sprite floating above
+
 	SignalBus.ingredient_added.emit(item.item_name)
 
 func _cook_potion(player):
