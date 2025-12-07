@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://lvb4m3hlaty3"]
 
 [ext_resource type="Script" uid="uid://b2ixkd4ii2a1r" path="res://Scripts/rat_score_ui.gd" id="1_jxero"]
-[ext_resource type="Script" uid="uid://bfjkgskovgwka" path="res://Scenes/RecipeContainer.gd" id="2_qdvrb"]
+[ext_resource type="Script" uid="uid://bfjkgskovgwka" path="res://Scripts/RecipeContainer.gd" id="2_qdvrb"]
 
 [node name="UI" type="Control"]
 layout_mode = 3

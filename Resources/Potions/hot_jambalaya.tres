@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Potion" load_steps=7 format=3 uid="uid://ghofjgl6wiek"]
 
-[ext_resource type="Script" path="res://Scripts/item.gd" id="1_xywrb"]
-[ext_resource type="Script" path="res://Scripts/potion.gd" id="2_q1v6a"]
+[ext_resource type="Script" uid="uid://de2x6nu24bxkm" path="res://Scripts/item.gd" id="1_xywrb"]
+[ext_resource type="Script" uid="uid://d3neoyj8wgaax" path="res://Scripts/potion.gd" id="2_q1v6a"]
 [ext_resource type="Resource" uid="uid://dym8jnd8cn8dy" path="res://Resources/Ingredients/toad_leg.tres" id="2_y25ff"]
 [ext_resource type="Resource" uid="uid://ubqmnoky64qc" path="res://Resources/Ingredients/rat_tail.tres" id="3_3vya6"]
 [ext_resource type="Resource" uid="uid://crxjivlet67gs" path="res://Resources/Ingredients/viper_venom.tres" id="4_4v7x4"]
