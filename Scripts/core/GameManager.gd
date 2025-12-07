@@ -1,6 +1,6 @@
 extends Node
 
-var game_length: float = 18.0
+var game_length: float = 120.0
 var consultation_fee: int = 2 
 var penalty_fee: int = 10 # <--- NEW: Cost for failing an order
 
