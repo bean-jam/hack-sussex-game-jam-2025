@@ -3,13 +3,15 @@ extends Node
 # Get references to the children nodes
 @onready var squish_player = $rat_squish_sfx
 @onready var item_grab = $item_grab_sfx
+@onready var happy_sfx = $happy_sfx
+@onready var angry_sfx = $angry_sfx
 
 func _ready():
 	# Connect to the signals from the SignalBus
 	SignalBus.rat_squished.connect(_on_rat_squished)
 	SignalBus.item_picked_up.connect(_on_item_picked_up)
+	SignalBus.delivery_result.connect(_on_delivery_result)
 	
-
 func _on_rat_squished():
 	# Optional: Add logic here (like pitch randomization)
 	squish_player.pitch_scale = randf_range(0.8, 1.2)
@@ -21,3 +23,11 @@ func _on_item_picked_up():
 	# When item picked up
 	item_grab.pitch_scale = randf_range(0.9, 1.1)
 	item_grab.play()
+
+func _on_delivery_result(was_successful: bool):
+	if was_successful == true:
+		happy_sfx.pitch_scale = randf_range(0.9, 1.1)
+		happy_sfx.play()
+	else:
+		angry_sfx.pitch_scale = randf_range(0.9, 1.1)
+		angry_sfx.play()
