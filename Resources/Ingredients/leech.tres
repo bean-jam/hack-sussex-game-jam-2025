@@ -1,13 +1,11 @@
 [gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://jwpx3sj2mv2k"]
 
 [ext_resource type="Script" uid="uid://de2x6nu24bxkm" path="res://Scripts/item.gd" id="1_8yx0d"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_yjcub"]
-size = Vector2(8, 8)
+[ext_resource type="Texture2D" uid="uid://bwavtb1y8hpxe" path="res://Assets/INGREDIENTS/LEECH.png" id="2_5u60q"]
 
 [resource]
 script = ExtResource("1_8yx0d")
 item_name = "Leech"
 description = "Slimy parasite historically used for medicinal bloodletting."
-texture = SubResource("PlaceholderTexture2D_yjcub")
+texture = ExtResource("2_5u60q")
 metadata/_custom_type_script = "uid://de2x6nu24bxkm"

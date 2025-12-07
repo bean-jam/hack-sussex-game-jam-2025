@@ -1,13 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bgbpas1hvaqxd"]
+[gd_scene load_steps=4 format=3 uid="uid://bgbpas1hvaqxd"]
 
 [ext_resource type="Texture2D" uid="uid://ccnbr4fct6fkf" path="res://Assets/Sprites/GHOSTIE_01_WHITE.png" id="1_grtl1"]
 [ext_resource type="Script" uid="uid://cr1eaejtsy3a2" path="res://Scripts/BaseCustomer.gd" id="1_i5r1j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_udrpb"]
 size = Vector2(12, 17)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_i5r1j"]
-size = Vector2(8, 8)
 
 [node name="BaseCustomer" type="CharacterBody2D"]
 z_index = 4
@@ -24,4 +21,3 @@ texture = ExtResource("1_grtl1")
 
 [node name="OrderBubble" type="Sprite2D" parent="."]
 position = Vector2(0, -13)
-texture = SubResource("PlaceholderTexture2D_i5r1j")

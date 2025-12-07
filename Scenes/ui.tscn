@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://detc1nugerftd"]
+[gd_scene load_steps=3 format=3 uid="uid://lvb4m3hlaty3"]
 
-[ext_resource type="Script" uid="uid://b2ixkd4ii2a1r" path="res://rat_score_ui.gd" id="1_jxero"]
+[ext_resource type="Script" uid="uid://b2ixkd4ii2a1r" path="res://Scripts/rat_score_ui.gd" id="1_jxero"]
+[ext_resource type="Script" uid="uid://bfjkgskovgwka" path="res://Scenes/RecipeContainer.gd" id="2_qdvrb"]
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -9,13 +10,25 @@ offset_right = 416.0
 offset_bottom = 216.0
 mouse_filter = 2
 
-[node name="rat_score_ui" type="Label" parent="."]
-layout_mode = 0
-offset_left = 87.0
-offset_top = 16.0
-offset_right = 127.0
-offset_bottom = 39.0
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="rat_score_ui" type="Label" parent="HUD"]
+offset_left = 55.0
+offset_top = 19.0
+offset_right = 95.0
+offset_bottom = 42.0
 scale = Vector2(0.5, 0.5)
 text = "1"
 horizontal_alignment = 1
 script = ExtResource("1_jxero")
+
+[node name="RecipeContainer" type="PanelContainer" parent="HUD"]
+offset_left = 15.0
+offset_top = 143.0
+offset_right = 78.0
+offset_bottom = 208.0
+script = ExtResource("2_qdvrb")
+
+[node name="IngredientContainer" type="HBoxContainer" parent="HUD/RecipeContainer"]
+layout_mode = 2
+alignment = 1
