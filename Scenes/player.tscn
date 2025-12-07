@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://bqn65togivj2c"]
+[gd_scene load_steps=24 format=3 uid="uid://bqn65togivj2c"]
 
 [ext_resource type="Script" uid="uid://6e524heq16j4" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://dww7o22eb273d" path="res://Assets/Sprites/WITCHDOCTOR-BWRUN.png" id="2_vgqql"]
 [ext_resource type="Texture2D" uid="uid://d0eb3l4830m67" path="res://Assets/Sprites/WITCHDOCTOR-RUN.png" id="3_vgqql"]
 [ext_resource type="Texture2D" uid="uid://br2gjfus5mc08" path="res://Assets/Sprites/WITCHDOCTOR-IDLE.png" id="4_fkybt"]
+[ext_resource type="Texture2D" uid="uid://4qba5pssy5x4" path="res://Assets/Sprites/SIDEWAYS-Sheet.png" id="5_fkybt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x3wgy"]
 atlas = ExtResource("2_vgqql")
@@ -48,6 +49,22 @@ region = Rect2(100, 0, 20, 35)
 [sub_resource type="AtlasTexture" id="AtlasTexture_fd4e3"]
 atlas = ExtResource("4_fkybt")
 region = Rect2(120, 0, 20, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqcod"]
+atlas = ExtResource("5_fkybt")
+region = Rect2(0, 0, 22, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igrcy"]
+atlas = ExtResource("5_fkybt")
+region = Rect2(22, 0, 22, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fs7ks"]
+atlas = ExtResource("5_fkybt")
+region = Rect2(44, 0, 22, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6n3p"]
+atlas = ExtResource("5_fkybt")
+region = Rect2(66, 0, 22, 35)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_b26j0"]
 animations = [{
@@ -98,6 +115,23 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqcod")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_igrcy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fs7ks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l6n3p")
+}],
+"loop": true,
+"name": &"sideways_walk",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n7ghd"]
@@ -115,7 +149,7 @@ lerp_amount = 0.3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_b26j0")
-animation = &"idle"
+animation = &"sideways_walk"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

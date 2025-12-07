@@ -38,7 +38,7 @@ func _physics_process(delta):
 	elif input_vector.x != 0:
 		# Handle side walking
 		animated_sprite.flip_h = input_vector.x < 0 # Flip if moving left
-		animated_sprite.play("idle") # Ensure you have this animation, or use "forward_walk"
+		animated_sprite.play("sideways_walk") # Ensure you have this animation, or use "forward_walk"
 	else:
 		animated_sprite.play("idle") # Stop
 	# -----------------------
