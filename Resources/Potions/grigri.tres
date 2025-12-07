@@ -4,13 +4,11 @@
 [ext_resource type="Script" path="res://Scripts/potion.gd" id="2_aqjyj"]
 [ext_resource type="Resource" uid="uid://cviwqynmxmqa5" path="res://Resources/Ingredients/alligator_teeth.tres" id="2_e4h08"]
 [ext_resource type="Resource" uid="uid://dym8jnd8cn8dy" path="res://Resources/Ingredients/toad_leg.tres" id="3_h3hri"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_bbcc1"]
-size = Vector2(8, 8)
+[ext_resource type="Texture2D" uid="uid://b8shyxvy4g23n" path="res://Assets/BOTTLES/black.png" id="5_h3hri"]
 
 [resource]
 script = ExtResource("2_aqjyj")
 required_items = Array[ExtResource("1_ejx2c")]([ExtResource("2_e4h08"), ExtResource("3_h3hri"), ExtResource("3_h3hri")])
 item_name = "Grigri"
-texture = SubResource("PlaceholderTexture2D_bbcc1")
+texture = ExtResource("5_h3hri")
 metadata/_custom_type_script = "uid://d3neoyj8wgaax"

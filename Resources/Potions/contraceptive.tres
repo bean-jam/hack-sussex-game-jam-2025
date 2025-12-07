@@ -3,14 +3,12 @@
 [ext_resource type="Script" path="res://Scripts/item.gd" id="1_3kttm"]
 [ext_resource type="Resource" uid="uid://cviwqynmxmqa5" path="res://Resources/Ingredients/alligator_teeth.tres" id="2_142nk"]
 [ext_resource type="Resource" uid="uid://dauog3637hj2o" path="res://Resources/Ingredients/eagle_eyeball.tres" id="3_3kttm"]
-[ext_resource type="Script" path="res://Scripts/potion.gd" id="4_kjvbb"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_142nk"]
-size = Vector2(8, 8)
+[ext_resource type="Script" uid="uid://d3neoyj8wgaax" path="res://Scripts/potion.gd" id="4_kjvbb"]
+[ext_resource type="Texture2D" uid="uid://rhb3uh0v0g3i" path="res://Assets/BOTTLES/blue.png" id="5_142nk"]
 
 [resource]
 script = ExtResource("4_kjvbb")
 required_items = Array[ExtResource("1_3kttm")]([ExtResource("2_142nk"), ExtResource("2_142nk"), ExtResource("3_3kttm")])
 item_name = "Contraceptive"
-texture = SubResource("PlaceholderTexture2D_142nk")
+texture = ExtResource("5_142nk")
 metadata/_custom_type_script = "uid://d3neoyj8wgaax"

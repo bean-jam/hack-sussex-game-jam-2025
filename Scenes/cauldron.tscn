@@ -1,6 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://447ybcm4qcv7"]
+[gd_scene load_steps=13 format=3 uid="uid://447ybcm4qcv7"]
 
+[ext_resource type="Script" uid="uid://c4kudw5w7qhh" path="res://Scripts/PotionCauldron.gd" id="1_2rulr"]
 [ext_resource type="Texture2D" uid="uid://dp4dxoc1agva4" path="res://Assets/Environment/FINAL_TOAD.png" id="1_2xink"]
+[ext_resource type="Script" uid="uid://d3neoyj8wgaax" path="res://Scripts/potion.gd" id="2_oiwvb"]
+[ext_resource type="Resource" uid="uid://b6jex2vfgxrhi" path="res://Resources/Potions/piss_potion.tres" id="2_r1an6"]
+[ext_resource type="Resource" uid="uid://bv7cnt615wfi5" path="res://Resources/Potions/contraceptive.tres" id="3_uhwwe"]
+[ext_resource type="Resource" uid="uid://x0jcgsgdedcm" path="res://Resources/Potions/grigri.tres" id="4_sg3l0"]
+[ext_resource type="Resource" uid="uid://ghofjgl6wiek" path="res://Resources/Potions/hot_jambalaya.tres" id="5_axbx3"]
+[ext_resource type="Resource" uid="uid://dojpvdv6s0rlr" path="res://Resources/Potions/shortsightedness.tres" id="6_h8o5g"]
+[ext_resource type="Resource" uid="uid://kijqpqnpyu3w" path="res://Resources/Potions/warts_and_boils.tres" id="7_qspni"]
+[ext_resource type="Resource" uid="uid://c54qdveg835yt" path="res://Resources/Potions/yellow_fever_cure.tres" id="8_hckop"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2rulr"]
 size = Vector2(44, 25)
@@ -9,7 +18,10 @@ size = Vector2(44, 25)
 radius = 32.01562
 
 [node name="Cauldron" type="StaticBody2D"]
-collision_layer = 34
+collision_layer = 98
+script = ExtResource("1_2rulr")
+known_recipes = Array[ExtResource("2_oiwvb")]([ExtResource("3_uhwwe"), ExtResource("4_sg3l0"), ExtResource("5_axbx3"), ExtResource("6_h8o5g"), ExtResource("7_qspni"), ExtResource("8_hckop")])
+failure_potion = ExtResource("2_r1an6")
 
 [node name="Cauldron" type="Sprite2D" parent="."]
 position = Vector2(208, 108)
@@ -22,3 +34,6 @@ shape = SubResource("RectangleShape2D_2rulr")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(209, 29)
 shape = SubResource("CircleShape2D_2xink")
+
+[node name="PotionSpawn" type="Marker2D" parent="."]
+position = Vector2(208, 75)
