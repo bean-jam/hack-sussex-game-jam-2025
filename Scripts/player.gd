@@ -4,30 +4,37 @@ extends CharacterBody2D
 var held_item: Item = null
 
 # NODES
-# --- CHANGED: Replaced InteractRay with InteractionArea ---
+# Ensure you have both of these nodes in your scene!
+@onready var interact_ray = $InteractRay
 @onready var interaction_area = $InteractionArea 
 @onready var held_item_icon = $HeldItemIcon
 @onready var animated_sprite = $AnimatedSprite2D
 
 # VARIABLES
-@export var speed: int = 150
+@export var speed = 150.0
 
 func _ready() -> void:
 	SignalBus.delivery_result.connect(_on_delivery_result)
+	
+	# Safety check
+	if not interaction_area:
+		print("WARNING: InteractionArea node is missing! You won't be able to pick up items.")
 
 func _on_delivery_result(was_successful: bool):
 	drop_item()
 
 func _physics_process(delta):
-	# Movement
+	# --- YOUR MOVEMENT CODE ---
 	var input_vector := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = input_vector * speed
 	move_and_slide()
 	
-	# --- REMOVED: Raycast rotation logic is no longer needed ---
-	# The Area2D surrounds the player, so we don't need to rotate it.
+	# --- YOUR RAYCAST ROTATION ---
+	# This keeps the ray pointing where you are moving
+	if input_vector != Vector2.ZERO:
+		interact_ray.target_position = input_vector * 40.0 
 	
-	# --- ANIMATION LOGIC ---
+	# --- YOUR ANIMATION LOGIC ---
 	if input_vector.y > 0:
 		animated_sprite.play("forward_walk")
 	elif input_vector.y < 0:
@@ -36,55 +43,66 @@ func _physics_process(delta):
 		animated_sprite.flip_h = input_vector.x < 0
 		animated_sprite.play("sideways_walk")
 	else:
-		animated_sprite.play("idle") 
+		animated_sprite.play("idle")
 	# -----------------------
 
 	# INTERACTION INPUT
-	if Input.is_action_just_pressed("interact"): 
+	if Input.is_action_just_pressed("interact"):
 		_attempt_interact()
 		
-	if Input.is_action_just_pressed("drop"): 
+	if Input.is_action_just_pressed("drop"):
 		drop_item()
 
-# --- NEW: Logic to find the closest interactable object ---
+# --- THE HYBRID INTERACTION LOGIC ---
 func _attempt_interact():
-	# 1. Get everything inside the circle
-	var overlapping_bodies = interaction_area.get_overlapping_bodies()
+	# 1. RAYCAST CHECK (Strictly for Customers)
+	# We force an update to make sure the ray isn't lagging behind the movement
+	interact_ray.force_raycast_update()
 	
-	# Note: If your items are Areas (not Bodies), use:
-	# var overlapping_areas = interaction_area.get_overlapping_areas()
-	# overlapping_bodies.append_array(overlapping_areas)
+	if interact_ray.is_colliding():
+		var collider = interact_ray.get_collider()
+		
+		# If we hit a customer, interact and STOP.
+		if collider.is_in_group("customers") and collider.has_method("interact"):
+			collider.interact(self)
+			return 
 
-	var closest_obj = null
-	var closest_dist = INF # Start with 'Infinity'
+	# 2. AREA CHECK (For Items & Cauldron)
+	# If we didn't hit a customer, look around us for items or the cauldron.
+	if interaction_area:
+		var overlapping_bodies = interaction_area.get_overlapping_bodies()
+		var closest_obj = null
+		var closest_dist = INF
 
-	# 2. Loop through them to find the closest valid one
-	for obj in overlapping_bodies:
-		if obj == self:
-			continue # Don't interact with yourself!
+		for obj in overlapping_bodies:
+			if obj == self: continue
 			
-		if obj.has_method("interact"):
-			var dist = global_position.distance_squared_to(obj.global_position)
-			if dist < closest_dist:
-				closest_dist = dist
-				closest_obj = obj
+			# Ignore customers here (they must be hit by ray)
+			if obj.is_in_group("customers"): continue
+			
+			# Find the closest Interactable (Item or Cauldron)
+			if obj.has_method("interact"):
+				var dist = global_position.distance_squared_to(obj.global_position)
+				if dist < closest_dist:
+					closest_dist = dist
+					closest_obj = obj
 
-	# 3. Interact with the winner
-	if closest_obj:
-		closest_obj.interact(self)
+		if closest_obj:
+			closest_obj.interact(self)
 
-# --- PUBLIC FUNCTIONS (Unchanged) ---
+# --- PUBLIC FUNCTIONS ---
 
 func pickup(item_resource: Resource):
 	if item_resource.resource_path.ends_with("rat_tail.tres"):
 		if GameManager.rat_score <= 0:
 			return
-		# Remember to use the fix from the previous question here!
-		GameManager.consume_rat_tail() 
 	
 	held_item = item_resource
 	print("Picked up: ", held_item.resource_path)
 	
+	if held_item.resource_path.ends_with("rat_tail.tres"):
+		SignalBus.rat_score_updated.emit()
+		
 	SignalBus.item_picked_up.emit()
 	update_visuals()
 
