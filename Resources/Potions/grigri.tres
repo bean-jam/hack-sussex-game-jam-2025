@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Potion" load_steps=6 format=3 uid="uid://x0jcgsgdedcm"]
 
-[ext_resource type="Script" uid="uid://de2x6nu24bxkm" path="res://Scripts/item.gd" id="1_ejx2c"]
-[ext_resource type="Script" uid="uid://d3neoyj8wgaax" path="res://Scripts/potion.gd" id="2_aqjyj"]
+[ext_resource type="Script" path="res://Scripts/item.gd" id="1_ejx2c"]
+[ext_resource type="Script" path="res://Scripts/potion.gd" id="2_aqjyj"]
 [ext_resource type="Resource" uid="uid://cviwqynmxmqa5" path="res://Resources/Ingredients/alligator_teeth.tres" id="2_e4h08"]
 [ext_resource type="Resource" uid="uid://dym8jnd8cn8dy" path="res://Resources/Ingredients/toad_leg.tres" id="3_h3hri"]
 
