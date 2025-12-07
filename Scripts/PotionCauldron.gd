@@ -18,6 +18,7 @@ func interact(player):
 		# (Optional: Check if it's actually an ingredient and not a finished potion)
 		_add_ingredient(player.held_item)
 		player.drop_item()
+		$GPUParticles2D.emitting = true
 		return
 
 	# CASE 2: COOKING / COLLECTING
@@ -53,7 +54,7 @@ func _check_recipes() -> Potion:
 	
 	for recipe in known_recipes:
 		# Get the recipe's required ingredients sorted the same way
-		var recipe_sorted = _get_sorted_paths(recipe.required_ingredients)
+		var recipe_sorted = _get_sorted_paths(recipe.required_items)
 		
 		# Compare the Arrays
 		if current_sorted == recipe_sorted:

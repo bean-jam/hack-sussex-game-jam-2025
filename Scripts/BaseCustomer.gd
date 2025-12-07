@@ -64,17 +64,22 @@ func interact(player):
 
 # --- SIGNAL RESPONSES ---
 func _on_delivery_result(was_successful: bool):
-	# Only react if I am the one waiting at the desk
 	if current_state == State.WAITING:
 		if was_successful:
 			print("Customer: Thank you!")
 			
+			# SUCCESS: Green Glow + Slightly Ghostly (0.8 Alpha)
+			modulate = Color(0.5, 2.0, 0.5, 0.8) 
 			
 			current_state = State.WALKING_OUT
 			order_bubble.visible = false
+			
 		else:
 			print("Customer: This isn't what I asked for!")
-			# Optional: Angry animation?
+			
+			# FAILURE: Red Glow + Slightly Ghostly (0.8 Alpha)
+			modulate = Color(2.0, 0.5, 0.5, 0.8)
+			
 			current_state = State.WALKING_OUT
 			order_bubble.visible = false
 
