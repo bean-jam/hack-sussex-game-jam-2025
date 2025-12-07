@@ -55,7 +55,6 @@ func spawn_enemy():
 	current_enemies += 1
 	enemy.rat_despawned.connect(on_enemy_despawned)
 	
-	add_child(enemy)
 	
 	# IMPORTANT: Do NOT call enemy.change_direction() here anymore, 
 	# because that would randomize the velocity and overwrite our "Upward" push.
