@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://hsoeols25sni"]
+[gd_scene load_steps=8 format=3 uid="uid://hsoeols25sni"]
 
 [ext_resource type="Script" uid="uid://b1qdysxuracvc" path="res://Scripts/enemy_script.gd" id="1_4gyqm"]
 [ext_resource type="Texture2D" uid="uid://cix3rvwra5akx" path="res://Assets/Sprites/RATRUN.png" id="2_1f0kj"]
+[ext_resource type="Texture2D" uid="uid://c3suhcwfi8da6" path="res://Assets/Sprites/RATSPLAT.png" id="3_afpow"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4gyqm"]
 size = Vector2(135, 97.5)
@@ -26,6 +27,14 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_afpow")
+}],
+"loop": true,
+"name": &"splat",
+"speed": 5.0
 }]
 
 [node name="Enemy" type="Area2D" groups=["Rat"]]
@@ -41,7 +50,7 @@ shape = SubResource("RectangleShape2D_4gyqm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_0830c")
+animation = &"splat"
 autoplay = "default"
-frame_progress = 0.8448641
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
