@@ -17,6 +17,7 @@ signal delivery_result(was_successful)
 # Emitted when an ingredient is dropped into the cauldron.
 signal item_picked_up
 signal ingredient_added(ingredient_name)
+signal potion_made
 
 # --- GAME STATE & RATS ---
 # Emitted when a rat is clicked.

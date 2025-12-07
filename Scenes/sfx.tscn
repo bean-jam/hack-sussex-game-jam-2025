@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://bngojq500isdm"]
+[gd_scene load_steps=8 format=3 uid="uid://bngojq500isdm"]
 
 [ext_resource type="Script" uid="uid://e24huqf8ymtu" path="res://Scripts/sfx_code.gd" id="1_4mmcj"]
 [ext_resource type="AudioStream" uid="uid://cb1d1c2bhlipm" path="res://Assets/SFX/rat_sfx_randomizer.tres" id="1_tcyhk"]
 [ext_resource type="AudioStream" uid="uid://dt66gkyc0j71f" path="res://Assets/SFX/grab_item_sfx.wav" id="3_ivd03"]
 [ext_resource type="AudioStream" uid="uid://cpo7ja3b7gcy1" path="res://Assets/SFX/happy_customer_sfx.wav" id="4_ar3tc"]
 [ext_resource type="AudioStream" uid="uid://j2bwhemfm8kk" path="res://Assets/SFX/angry_customer_sfx.wav" id="5_14lcj"]
+[ext_resource type="AudioStream" uid="uid://bwhusrbra1pus" path="res://Assets/SFX/cauldron_sfx.wav" id="6_14lcj"]
+[ext_resource type="AudioStream" uid="uid://cuc1vjymy0vop" path="res://Assets/SFX/potion_sfx.wav" id="7_em1ey"]
 
 [node name="SFX" type="Node"]
 script = ExtResource("1_4mmcj")
@@ -17,9 +19,22 @@ max_polyphony = 5
 [node name="item_grab_sfx" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_ivd03")
 volume_db = -4.771
+max_polyphony = 10
 
 [node name="happy_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_ar3tc")
+volume_db = -5.725
+max_polyphony = 10
 
 [node name="angry_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_14lcj")
+volume_db = -15.266
+max_polyphony = 10
+
+[node name="cauldron_sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_14lcj")
+max_polyphony = 10
+
+[node name="potion_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_em1ey")
+max_polyphony = 10

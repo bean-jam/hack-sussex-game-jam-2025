@@ -17,7 +17,7 @@ var current_ingredients: Array[Item] = []
 func add_ingredient(item: Item):
 	current_ingredients.append(item)
 	print("Added c%s. Total items: %d" % [item.item_name, current_ingredients.size()])
-	
+	SignalBus.ingredient_added.emit(item)
 	# Optional: Check immediately after adding an item
 	# check_for_recipe_match()
 
@@ -39,7 +39,7 @@ func check_for_recipe_match() -> Item:
 	# 1. Only proceed if we have ingredients
 	if current_ingredients.is_empty():
 		return null
-
+	
 	# 2. Iterate through every known recipe
 	for recipe in all_recipes:
 		# Check if the ingredient count matches the recipe count
