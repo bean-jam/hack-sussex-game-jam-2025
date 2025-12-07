@@ -3,13 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://bqn65togivj2c" path="res://Scenes/player.tscn" id="1_ovar5"]
 [ext_resource type="PackedScene" uid="uid://bgbpas1hvaqxd" path="res://Scenes/customer1.tscn" id="4_k0r8c"]
 [ext_resource type="Resource" uid="uid://ubqmnoky64qc" path="res://Resources/Ingredients/rat_tail.tres" id="5_3wfad"]
-[ext_resource type="PackedScene" uid="uid://bonbooj2bn18v" path="res://Scenes/item_container.tscn" id="5_ncdvc"]
+[ext_resource type="PackedScene" path="res://Scenes/item_container.tscn" id="5_ncdvc"]
 [ext_resource type="Resource" uid="uid://dym8jnd8cn8dy" path="res://Resources/Ingredients/toad_leg.tres" id="6_q2a4t"]
 [ext_resource type="Resource" uid="uid://crxjivlet67gs" path="res://Resources/Ingredients/viper_venom.tres" id="7_24exq"]
 [ext_resource type="Resource" uid="uid://jwpx3sj2mv2k" path="res://Resources/Ingredients/leech.tres" id="8_bk6u1"]
 [ext_resource type="Resource" uid="uid://cviwqynmxmqa5" path="res://Resources/Ingredients/alligator_teeth.tres" id="9_slje7"]
 [ext_resource type="Resource" uid="uid://dauog3637hj2o" path="res://Resources/Ingredients/eagle_eyeball.tres" id="10_mlaev"]
-[ext_resource type="PackedScene" path="res://Scenes/spawner.tscn" id="11_24exq"]
+[ext_resource type="PackedScene" uid="uid://bqhdeb8timjow" path="res://Scenes/spawner.tscn" id="11_24exq"]
 [ext_resource type="PackedScene" uid="uid://t6kjf3f3qmd8" path="res://Scenes/customer_spawner.tscn" id="12_bk6u1"]
 [ext_resource type="Resource" uid="uid://bv7cnt615wfi5" path="res://Resources/Potions/contraceptive.tres" id="13_ff1bl"]
 [ext_resource type="Resource" uid="uid://x0jcgsgdedcm" path="res://Resources/Potions/grigri.tres" id="14_3see1"]
@@ -33,6 +33,8 @@ glow_bloom = 0.5
 
 [node name="Player" parent="." instance=ExtResource("1_ovar5")]
 position = Vector2(209, 80)
+speed = 150.0
+lerp_amount = 0.1
 
 [node name="RatTails" parent="." instance=ExtResource("5_ncdvc")]
 position = Vector2(65, 41)

@@ -17,6 +17,7 @@ signal delivery_result(was_successful)
 # Emitted when an ingredient is dropped into the cauldron.
 signal item_picked_up
 signal ingredient_added(ingredient_name)
+signal potion_made
 
 # --- GAME STATE & RATS ---
 # Emitted when a rat is clicked.
@@ -27,4 +28,5 @@ signal rat_score_updated(new_rat_score)
 signal score_updated(new_total_score)
 
 # Emitted when the timer hits 0.
+signal time_updated(current_time_left)
 signal day_ended

@@ -35,6 +35,7 @@ func _add_ingredient(item: Item):
 
 func _cook_potion(player):
 	print("Cooking with: ", current_ingredients)
+	SignalBus.potion_made.emit()
 	
 	# 1. Find a match
 	var result_potion = _check_recipes()
