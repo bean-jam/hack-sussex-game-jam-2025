@@ -9,7 +9,7 @@ size = Vector2(8, 8)
 
 [resource]
 script = ExtResource("2_xuunb")
-required_items = Array[ExtResource("1_ln5ex")]([ExtResource("2_jdyg4"), ExtResource("2_jdyg4")])
+required_items = Array[ExtResource("1_ln5ex")]([ExtResource("2_jdyg4"), ExtResource("2_jdyg4"), ExtResource("2_jdyg4")])
 item_name = "Shortsightedness"
 texture = SubResource("PlaceholderTexture2D_35bio")
 metadata/_custom_type_script = "uid://d3neoyj8wgaax"
