@@ -2,10 +2,9 @@ extends Node
 
 var game_length: float = 180.0
 var consultation_fee: int = 2 
+var penalty_fee: int = 10 # <--- NEW: Cost for failing an order
 
 # --- PRICING CONFIG ---
-# Since you are using Resources, you ideally want the price IN the resource.
-# But for now, we can map the Item Name string to a price here.
 var prices = {
 	"Contraceptive": 15,
 	"Grigri": 50,
@@ -21,7 +20,6 @@ var time_left: float
 var is_game_active: bool = true
 var rat_score: int = 1
 
-# CHANGED: Now stores the actual Resource object, not a string
 var current_target_item: Item = null 
 
 func _ready():
@@ -30,16 +28,28 @@ func _ready():
 	SignalBus.customer_at_desk.connect(_on_customer_at_desk)
 	SignalBus.attempt_delivery.connect(_check_delivery)
 	SignalBus.rat_squished.connect(_on_rat_squished)
-	SignalBus.rat_score_updated.connect(_on_rat_score_updated)
 	
-	# Careful with infinite loops! (removed self-connection for rat score)
+	# Careful with infinite loops!
 	# SignalBus.rat_score_updated.connect(_on_rat_score_updated) 
+
+## Game Timer
+func _process(delta):
+	if is_game_active:
+		time_left -= delta
+		
+		# Check for game over
+		if time_left <= 0:
+			time_left = 0
+			end_game()
+
+func get_time_string():
+	var minutes = floor(time_left / 60)
+	var seconds = int(time_left) % 60
+	return "%02d:%02d" % [minutes, seconds]
 
 # --- LOGIC ---
 
 func _on_customer_at_desk(customer_data):
-	# 'customer_data' should be the actual Customer node or a Dictionary
-	# Assuming the customer emits their desired_item when they arrive
 	if customer_data is Item:
 		current_target_item = customer_data
 		print("Manager: New order received for " + current_target_item.item_name)
@@ -47,7 +57,6 @@ func _on_customer_at_desk(customer_data):
 		current_target_item = customer_data.desired_item
 
 func _check_delivery(held_item_resource):
-	# If no customer is there (or they haven't ordered yet), ignore
 	if current_target_item == null:
 		return
 
@@ -55,7 +64,7 @@ func _check_delivery(held_item_resource):
 	var item_name = "Unknown"
 	
 	if held_item_resource != null:
-		item_name = held_item_resource.item_name # Assuming your Item resource has 'item_name'
+		item_name = held_item_resource.item_name 
 
 	# LOGIC: Compare Resources
 	if held_item_resource == current_target_item:
@@ -65,6 +74,9 @@ func _check_delivery(held_item_resource):
 	else:
 		success = false
 		print("Manager: Wrong item! Wanted: " + current_target_item.item_name + ", Got: " + item_name)
+		
+		# --- NEW: APPLY PENALTY ---
+		_remove_money()
 
 	# Tell the Customer (and Spawner) the result
 	SignalBus.delivery_result.emit(success)
@@ -79,6 +91,16 @@ func _add_money(item_name):
 	print("Score: ", score)
 	SignalBus.score_updated.emit(score)
 
+# --- NEW FUNCTION ---
+func _remove_money():
+	score -= penalty_fee
+	
+	# Optional: Prevent negative score?
+	# if score < 0: score = 0 
+	
+	print("Penalty applied! Score: ", score)
+	SignalBus.score_updated.emit(score)
+
 # --- RAT LOGIC ---
 
 func _on_rat_squished():
@@ -87,9 +109,9 @@ func _on_rat_squished():
 	SignalBus.score_updated.emit(score)
 	SignalBus.rat_score_updated.emit(rat_score)
 
-func _on_rat_score_updated():
-	rat_score -=1
-	SignalBus.rat_score_updated.emit(rat_score)
+func _on_rat_score_updated(new_score):
+	# Careful logic here to match your signal connection
+	pass
 
 func end_game():
 	is_game_active = false
