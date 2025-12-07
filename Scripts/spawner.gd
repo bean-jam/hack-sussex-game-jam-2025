@@ -15,7 +15,11 @@ func _ready():
 	screen_size = get_viewport_rect().size
 	$SpawnTimer.timeout.connect(spawn_enemy)
 	$SpawnTimer.start()
+	
+	# Connect to global signal to track deaths
+	SignalBus.rat_squished.connect(on_enemy_died)
 	print("spawner ready")
+	randomize()
 
 
 func spawn_enemy():
@@ -23,33 +27,38 @@ func spawn_enemy():
 		return 
 
 	var enemy = enemy_scene.instantiate()
-
-	randomize()
-	var start_left = randi() % 2 == 0
-	var rand_y = randf_range(120, screen_size.y - 50)
+# 1. Start Position: Random X at the bottom
+	# We use a wider range so they don't hug the walls instantly
+	var start_x = randf_range(20, screen_size.x - 20)
+	var start_y = screen_size.y + 60 
+	enemy.position = Vector2(start_x, start_y)
 	
-	# 1. Set position just inside the despawn boundary (The Clamp)
-	if start_left:
-		# Spawn at x = -90 (inside the x < -100 despawn zone)
-		enemy.position = Vector2(-SAFE_SPAWN_X_OFFSET, rand_y) 
-		enemy.direction = 1
-		# Set a strong inward velocity
-		enemy.velocity = Vector2(1.0, 0.0) 
-	else:
-		# Spawn at x = screen_size.x + 90 (inside the x > screen_size.x + 100 despawn zone)
-		enemy.position = Vector2(screen_size.x + SAFE_SPAWN_X_OFFSET, rand_y) 
-		enemy.direction = -1
-		# Set a strong inward velocity
-		enemy.velocity = Vector2(-1.0, 0.0) 
-		
-	# Connect the signals
+	# 2. Target Position: Pick a random spot near the CEILING
+	# This ensures every rat is "aiming" for the play area
+	var target_x = randf_range(20, screen_size.x - 20)
+	var target_y = 50.0 # This should match your Rat's 'ceiling_y'
+	
+	var target_position = Vector2(target_x, target_y)
+	
+	# 3. Calculate Direction (Target - Start)
+	# This gives us a vector pointing exactly from spawn to target
+	var direction_vector = (target_position - enemy.position).normalized()
+	
+	# 4. OPTIONAL: Flatten the angle further?
+	# If you want them to be REALLY diagonal, you can multiply the X component
+	# direction_vector.x *= 1.5 
+	# direction_vector = direction_vector.normalized() # Re-normalize after tweaking
+	
+	enemy.velocity = direction_vector
+	
+	add_child(enemy)
+	current_enemies += 1
 	enemy.rat_despawned.connect(on_enemy_despawned)
 	
 	add_child(enemy)
 	
-	# 2. Call change_direction, which will normalize velocity and add Y-axis randomness, 
-	# but the dominant X direction is already set to move INWARD.
-	enemy.change_direction() 
+	# IMPORTANT: Do NOT call enemy.change_direction() here anymore, 
+	# because that would randomize the velocity and overwrite our "Upward" push.
 	
 	current_enemies += 1
 	print("Spawning Rat at position: ", enemy.position)

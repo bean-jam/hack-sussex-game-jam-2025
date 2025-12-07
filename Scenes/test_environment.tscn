@@ -16,7 +16,7 @@
 [ext_resource type="Resource" uid="uid://ghofjgl6wiek" path="res://Resources/Potions/hot_jambalaya.tres" id="15_0f4je"]
 [ext_resource type="Resource" uid="uid://dojpvdv6s0rlr" path="res://Resources/Potions/shortsightedness.tres" id="17_mxpae"]
 [ext_resource type="Resource" uid="uid://kijqpqnpyu3w" path="res://Resources/Potions/warts_and_boils.tres" id="18_0orn4"]
-[ext_resource type="PackedScene" uid="uid://detc1nugerftd" path="res://Scenes/ui.tscn" id="19_ff1bl"]
+[ext_resource type="PackedScene" uid="uid://lvb4m3hlaty3" path="res://Scenes/ui.tscn" id="19_ff1bl"]
 [ext_resource type="PackedScene" uid="uid://dpdh7mbq21131" path="res://Scenes/room.tscn" id="19_op7ht"]
 [ext_resource type="Resource" uid="uid://c54qdveg835yt" path="res://Resources/Potions/yellow_fever_cure.tres" id="19_qryae"]
 [ext_resource type="PackedScene" uid="uid://dyptvgkuseve0" path="res://Scenes/musicSFX.tscn" id="20_ff1bl"]
