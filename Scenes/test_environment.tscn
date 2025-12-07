@@ -52,13 +52,13 @@ ingredient_data = ExtResource("7_24exq")
 position = Vector2(289, 42)
 ingredient_data = ExtResource("8_bk6u1")
 
+[node name="EagleEyeball" parent="." instance=ExtResource("5_ncdvc")]
+position = Vector2(351, 42)
+ingredient_data = ExtResource("10_mlaev")
+
 [node name="AlligatorTeeth" parent="." instance=ExtResource("5_ncdvc")]
 position = Vector2(319, 42)
 ingredient_data = ExtResource("9_slje7")
-
-[node name="EagleEyeball" parent="." instance=ExtResource("5_ncdvc")]
-position = Vector2(351, 43)
-ingredient_data = ExtResource("10_mlaev")
 
 [node name="Spawner" parent="." instance=ExtResource("11_24exq")]
 

@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bonbooj2bn18v"]
+[gd_scene load_steps=3 format=3 uid="uid://c6q47ytvxi6cc"]
 
 [ext_resource type="Script" uid="uid://d2m2ajo4kskwb" path="res://Scripts/ItemContainer.gd" id="1_liojt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4u81j"]
-size = Vector2(6, 4)
+size = Vector2(25, 23)
 
 [node name="ItemContainer" type="StaticBody2D"]
 collision_layer = 16
