@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cbkr5iw26j277"]
+[gd_scene load_steps=24 format=3 uid="uid://cbkr5iw26j277"]
 
 [ext_resource type="PackedScene" uid="uid://bqn65togivj2c" path="res://Scenes/player.tscn" id="1_ovar5"]
 [ext_resource type="PackedScene" uid="uid://bgbpas1hvaqxd" path="res://Scenes/customer1.tscn" id="4_k0r8c"]
@@ -21,6 +21,7 @@
 [ext_resource type="Resource" uid="uid://c54qdveg835yt" path="res://Resources/Potions/yellow_fever_cure.tres" id="19_qryae"]
 [ext_resource type="PackedScene" uid="uid://dyptvgkuseve0" path="res://Scenes/musicSFX.tscn" id="20_ff1bl"]
 [ext_resource type="PackedScene" uid="uid://bngojq500isdm" path="res://Scenes/sfx.tscn" id="21_3see1"]
+[ext_resource type="PackedScene" uid="uid://67nktljkbhf" path="res://Scenes/crt.tscn" id="22_0f4je"]
 
 [sub_resource type="Environment" id="Environment_3see1"]
 glow_enabled = true
@@ -75,3 +76,5 @@ possible_orders = Array[Resource]([ExtResource("13_ff1bl"), ExtResource("14_3see
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_3see1")
+
+[node name="CRT" parent="." instance=ExtResource("22_0f4je")]

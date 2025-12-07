@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://67nktljkbhf"]
+
+[ext_resource type="Shader" uid="uid://cg2j0psnqnovf" path="res://Scripts/crt_shader.gdshader" id="1_u3egi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xvolc"]
+shader = ExtResource("1_u3egi")
+shader_parameter/warp_amount = 0.05
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.250000011875
+shader_parameter/scanline_opacity = 0.05
+shader_parameter/scanline_count = 300.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_0f4je"]
+size = Vector2(416, 216)
+center_offset = Vector3(208, 108, 0)
+
+[node name="CRT" type="CanvasLayer"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+material = SubResource("ShaderMaterial_xvolc")
+mesh = SubResource("QuadMesh_0f4je")
