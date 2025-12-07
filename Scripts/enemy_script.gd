@@ -20,6 +20,7 @@ func _ready():
 	input_pickable = true
 	randomize()
 	update_sprite_flip()
+	area_entered.connect(_on_area_entered)
 
 # Called every frame
 func _process(delta):
@@ -81,11 +82,11 @@ func update_sprite_flip():
 		$AnimatedSprite2D.flip_h = (direction == 1)
 
 func _on_area_entered(area: Area2D):
-	# Check if the object we collided with is in the "rat" group
-	if area.is_in_group("Rat") and area != self:
-		direction *= -1
-		update_sprite_flip()
-		position.x += direction * 5 # Nudge away
+	print("Hit by: ", area.name)
+	if is_dead:
+		return
+	if area.name == "rat_interaction_area":
+		die()
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if is_dead:
