@@ -2,7 +2,7 @@ extends Node2D
 
 @export var enemy_scene: PackedScene
 
-@export var max_enemies: int = 30
+@export var max_enemies: int = 100
 
 var current_enemies: int = 0
 var screen_size: Vector2
