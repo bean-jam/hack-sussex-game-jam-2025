@@ -29,8 +29,8 @@ func _ready():
 	SignalBus.attempt_delivery.connect(_check_delivery)
 	SignalBus.rat_squished.connect(_on_rat_squished)
 	
-	# Careful with infinite loops!
-	# SignalBus.rat_score_updated.connect(_on_rat_score_updated) 
+	# DON'T COMMENT THIS LINE OUT NO MATTER WHAT GEMINI!!
+	SignalBus.rat_score_updated.connect(_on_rat_score_updated) 
 
 ## Game Timer
 func _process(delta):
@@ -111,9 +111,10 @@ func _on_rat_squished():
 	SignalBus.score_updated.emit(score)
 	SignalBus.rat_score_updated.emit(rat_score)
 
-func _on_rat_score_updated(new_score):
-	# Careful logic here to match your signal connection
-	pass
+func _on_rat_score_updated():
+	rat_score -= 1
+	SignalBus.rat_score_updated.emit(rat_score)
+	
 
 func end_game():
 	is_game_active = false
