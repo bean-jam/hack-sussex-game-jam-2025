@@ -25,7 +25,8 @@
 
 [sub_resource type="Environment" id="Environment_3see1"]
 glow_enabled = true
-glow_bloom = 0.5
+glow_bloom = 0.87
+glow_blend_mode = 0
 
 [node name="test-environment" type="Node2D"]
 

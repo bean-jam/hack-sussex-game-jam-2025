@@ -1,9 +1,24 @@
-[gd_scene load_steps=9 format=3 uid="uid://dpdh7mbq21131"]
+[gd_scene load_steps=12 format=3 uid="uid://dpdh7mbq21131"]
 
 [ext_resource type="Texture2D" uid="uid://jfdhxxix8jey" path="res://Assets/Environment/FINAL_ENVI_BASE.png" id="1_w77m5"]
 [ext_resource type="PackedScene" uid="uid://bo3sofng0w8s4" path="res://Scenes/desk.tscn" id="3_fchae"]
 [ext_resource type="PackedScene" uid="uid://447ybcm4qcv7" path="res://Scenes/cauldron.tscn" id="4_6mpvv"]
 [ext_resource type="Texture2D" uid="uid://6n1nv2id5mrv" path="res://Assets/Environment/FINAL_TABLESHADOW.png" id="4_26e1p"]
+
+[sub_resource type="Gradient" id="Gradient_6mpvv"]
+colors = PackedColorArray(0, 1, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gkney"]
+gradient = SubResource("Gradient_6mpvv")
+fill = 1
+fill_from = Vector2(0.49326146, 0.46495956)
+fill_to = Vector2(0.92722374, 0.18463612)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6mpvv"]
+gradient = SubResource("Gradient_6mpvv")
+fill = 1
+fill_from = Vector2(0.49326146, 0.46495956)
+fill_to = Vector2(0.7277628, 0.3490566)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6mpvv"]
 size = Vector2(39, 227)
@@ -34,6 +49,14 @@ position = Vector2(208, 108)
 texture = ExtResource("4_26e1p")
 
 [node name="Cauldron" parent="." instance=ExtResource("4_6mpvv")]
+
+[node name="PharmacyLight" type="PointLight2D" parent="."]
+position = Vector2(208, 10)
+texture = SubResource("GradientTexture2D_gkney")
+
+[node name="CauldronLight" type="PointLight2D" parent="."]
+position = Vector2(208, 43)
+texture = SubResource("GradientTexture2D_6mpvv")
 
 [node name="Boundaries" type="StaticBody2D" parent="."]
 collision_layer = 34

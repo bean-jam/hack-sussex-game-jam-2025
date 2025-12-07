@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://447ybcm4qcv7"]
+[gd_scene load_steps=27 format=3 uid="uid://447ybcm4qcv7"]
 
 [ext_resource type="Script" uid="uid://c4kudw5w7qhh" path="res://Scripts/PotionCauldron.gd" id="1_2rulr"]
 [ext_resource type="Texture2D" uid="uid://dp4dxoc1agva4" path="res://Assets/Environment/FINAL_TOAD.png" id="1_2xink"]
@@ -10,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://dojpvdv6s0rlr" path="res://Resources/Potions/shortsightedness.tres" id="6_h8o5g"]
 [ext_resource type="Resource" uid="uid://kijqpqnpyu3w" path="res://Resources/Potions/warts_and_boils.tres" id="7_qspni"]
 [ext_resource type="Resource" uid="uid://c54qdveg835yt" path="res://Resources/Potions/yellow_fever_cure.tres" id="8_hckop"]
+[ext_resource type="Texture2D" uid="uid://bp1jwkkjnrbf6" path="res://Assets/Sprites/FIRE 3.png" id="11_uhwwe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2rulr"]
 size = Vector2(44, 25)
@@ -31,6 +32,86 @@ tangential_accel_max = 40.679996
 damping_max = 12.8810005
 scale_max = 2.0
 color = Color(0, 1.2536472, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sg3l0"]
+atlas = ExtResource("11_uhwwe")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axbx3"]
+atlas = ExtResource("11_uhwwe")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8o5g"]
+atlas = ExtResource("11_uhwwe")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qspni"]
+atlas = ExtResource("11_uhwwe")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hckop"]
+atlas = ExtResource("11_uhwwe")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pe0y8"]
+atlas = ExtResource("11_uhwwe")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rgev"]
+atlas = ExtResource("11_uhwwe")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ifa8v"]
+atlas = ExtResource("11_uhwwe")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pnn2l"]
+atlas = ExtResource("11_uhwwe")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vhtbb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sg3l0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axbx3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h8o5g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qspni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hckop")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pe0y8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6rgev")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ifa8v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pnn2l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_uhwwe"]
+colors = PackedColorArray(1, 0.22352941, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sg3l0"]
+gradient = SubResource("Gradient_uhwwe")
+fill = 1
+fill_from = Vector2(0.50673854, 0.45148247)
+fill_to = Vector2(0.8544474, 0.19272237)
 
 [node name="Cauldron" type="StaticBody2D"]
 collision_layer = 98
@@ -61,5 +142,15 @@ one_shot = true
 explosiveness = 0.35
 randomness = 0.2
 trail_enabled = true
-trail_lifetime = 0.060000000000000005
+trail_lifetime = 0.06
 process_material = SubResource("ParticleProcessMaterial_oiwvb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(209, 66)
+sprite_frames = SubResource("SpriteFrames_vhtbb")
+autoplay = "default"
+frame_progress = 0.22734909
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(209, 66)
+texture = SubResource("GradientTexture2D_sg3l0")

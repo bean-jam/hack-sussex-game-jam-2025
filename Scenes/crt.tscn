@@ -4,11 +4,11 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xvolc"]
 shader = ExtResource("1_u3egi")
-shader_parameter/warp_amount = 0.05
-shader_parameter/vignette_intensity = 0.4
-shader_parameter/vignette_opacity = 0.250000011875
-shader_parameter/scanline_opacity = 0.05
-shader_parameter/scanline_count = 300.0
+shader_parameter/warp_amount = 0.0
+shader_parameter/vignette_intensity = 0.250000011875
+shader_parameter/vignette_opacity = 0.750000035625
+shader_parameter/scanline_opacity = 0.0
+shader_parameter/scanline_count = 0.0
 
 [sub_resource type="QuadMesh" id="QuadMesh_0f4je"]
 size = Vector2(416, 216)
