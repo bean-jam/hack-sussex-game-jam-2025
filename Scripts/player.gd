@@ -9,9 +9,7 @@ var held_item: Item = null
 @onready var animated_sprite = $AnimatedSprite2D # <--- CHANGED: References AnimatedSprite2D
 
 # VARIABLES
-@export var speed = 150.0
-const JUMP_VELOCITY = -400.0
-@export var lerp_amount = 0.1
+@export var speed: int = 150
 
 func _ready() -> void:
 	SignalBus.delivery_result.connect(_on_delivery_result)
@@ -22,8 +20,7 @@ func _on_delivery_result(was_successful: bool):
 func _physics_process(delta):
 	# Movement
 	var input_vector := Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	var target_velocity = input_vector * speed
-	velocity = velocity.lerp(target_velocity, lerp_amount)
+	velocity = input_vector * speed
 	move_and_slide()
 	
 	# Interact raycast rotation
