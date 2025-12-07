@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://6e524heq16j4" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://dww7o22eb273d" path="res://Assets/Sprites/WITCHDOCTOR-BWRUN.png" id="2_vgqql"]
 [ext_resource type="Texture2D" uid="uid://d0eb3l4830m67" path="res://Assets/Sprites/WITCHDOCTOR-RUN.png" id="3_vgqql"]
-[ext_resource type="Texture2D" uid="uid://br2gjfus5mc08" path="res://Assets/Sprites/WITCHDOCTOR-IDLE.png" id="4_fkybt"]
+[ext_resource type="Texture2D" uid="uid://dedqa423cfncm" path="res://Assets/Sprites/NEWNEWIDLE.png" id="4_fkybt"]
 [ext_resource type="Texture2D" uid="uid://4qba5pssy5x4" path="res://Assets/Sprites/SIDEWAYS-Sheet.png" id="5_fkybt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x3wgy"]
@@ -24,31 +24,31 @@ region = Rect2(20, 0, 20, 35)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tx1dd"]
 atlas = ExtResource("4_fkybt")
-region = Rect2(0, 0, 20, 35)
+region = Rect2(0, 0, 21, 35)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gymyn"]
 atlas = ExtResource("4_fkybt")
-region = Rect2(20, 0, 20, 35)
+region = Rect2(21, 0, 21, 35)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pu2lt"]
 atlas = ExtResource("4_fkybt")
-region = Rect2(40, 0, 20, 35)
+region = Rect2(42, 0, 21, 35)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ukyrk"]
 atlas = ExtResource("4_fkybt")
-region = Rect2(60, 0, 20, 35)
+region = Rect2(63, 0, 21, 35)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7dp3o"]
 atlas = ExtResource("4_fkybt")
-region = Rect2(80, 0, 20, 35)
+region = Rect2(84, 0, 21, 35)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h4iuc"]
 atlas = ExtResource("4_fkybt")
-region = Rect2(100, 0, 20, 35)
+region = Rect2(105, 0, 21, 35)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fd4e3"]
 atlas = ExtResource("4_fkybt")
-region = Rect2(120, 0, 20, 35)
+region = Rect2(126, 0, 21, 35)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qqcod"]
 atlas = ExtResource("5_fkybt")
@@ -144,13 +144,12 @@ z_index = 2
 collision_mask = 106
 motion_mode = 1
 script = ExtResource("1_cvnsp")
-speed = 100.0
-lerp_amount = 0.3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_b26j0")
-animation = &"sideways_walk"
+animation = &"idle"
 autoplay = "idle"
+frame_progress = 0.2136119
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 0)
