@@ -13,6 +13,7 @@ mouse_filter = 2
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="rat_score_ui" type="Label" parent="HUD"]
+texture_filter = 1
 offset_left = 55.0
 offset_top = 19.0
 offset_right = 95.0

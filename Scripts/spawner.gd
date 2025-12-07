@@ -26,7 +26,7 @@ func spawn_enemy():
 
 	randomize()
 	var start_left = randi() % 2 == 0
-	var rand_y = randf_range(180, screen_size.y - 50)
+	var rand_y = randf_range(120, screen_size.y - 50)
 	
 	# 1. Set position just inside the despawn boundary (The Clamp)
 	if start_left:

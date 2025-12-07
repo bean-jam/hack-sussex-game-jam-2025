@@ -46,10 +46,19 @@ func _attempt_interact():
 # --- PUBLIC FUNCTIONS (Called by other objects) ---
 
 func pickup(item_resource: Resource):
+	
+	 # Debugging helpful for resources
+	if item_resource.resource_path.ends_with("rat_tail.tres"):
+		
+		if GameManager.rat_score <= 0:
+			return
+	
 	held_item = item_resource
-	print("Picked up: ", held_item.resource_path) # Debugging helpful for resources
+	print("Picked up: ", held_item.resource_path)
+	
 	if held_item.resource_path.ends_with("rat_tail.tres"):
 		SignalBus.rat_score_updated.emit()
+		
 	SignalBus.item_picked_up.emit()
 	update_visuals()
 
