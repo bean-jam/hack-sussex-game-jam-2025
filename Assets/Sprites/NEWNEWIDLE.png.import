@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://br2gjfus5mc08"
-path="res://.godot/imported/WITCHDOCTOR-IDLE.png-7d9840b6391759b6d4a69d1fbec20868.ctex"
+uid="uid://dedqa423cfncm"
+path="res://.godot/imported/NEWNEWIDLE.png-80a262512541d89bd05c3ae5088b10fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/WITCHDOCTOR-IDLE.png"
-dest_files=["res://.godot/imported/WITCHDOCTOR-IDLE.png-7d9840b6391759b6d4a69d1fbec20868.ctex"]
+source_file="res://Assets/Sprites/NEWNEWIDLE.png"
+dest_files=["res://.godot/imported/NEWNEWIDLE.png-80a262512541d89bd05c3ae5088b10fe.ctex"]
 
 [params]
 
