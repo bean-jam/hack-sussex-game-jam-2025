@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bngojq500isdm"]
+
+[ext_resource type="Script" uid="uid://e24huqf8ymtu" path="res://Scripts/sfx_code.gd" id="1_4mmcj"]
+[ext_resource type="AudioStream" uid="uid://cb1d1c2bhlipm" path="res://Assets/SFX/rat_sfx_randomizer.tres" id="1_tcyhk"]
+[ext_resource type="AudioStream" uid="uid://dt66gkyc0j71f" path="res://Assets/SFX/grab_item_sfx.wav" id="3_ivd03"]
+
+[node name="SFX" type="Node"]
+script = ExtResource("1_4mmcj")
+
+[node name="rat_squish_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_tcyhk")
+volume_db = 0.954
+max_polyphony = 5
+
+[node name="item_grab_sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ivd03")

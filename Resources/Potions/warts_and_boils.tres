@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="Potion" load_steps=6 format=3 uid="uid://kijqpqnpyu3w"]
 
-[ext_resource type="Script" uid="uid://de2x6nu24bxkm" path="res://Scripts/item.gd" id="1_ov373"]
+[ext_resource type="Script" path="res://Scripts/item.gd" id="1_ov373"]
 [ext_resource type="Resource" uid="uid://jwpx3sj2mv2k" path="res://Resources/Ingredients/leech.tres" id="2_lvo36"]
-[ext_resource type="Script" uid="uid://d3neoyj8wgaax" path="res://Scripts/potion.gd" id="2_r5e53"]
+[ext_resource type="Script" path="res://Scripts/potion.gd" id="2_r5e53"]
 [ext_resource type="Resource" uid="uid://crxjivlet67gs" path="res://Resources/Ingredients/viper_venom.tres" id="3_n06bc"]
 [ext_resource type="Texture2D" uid="uid://bio2yxfa4xc1g" path="res://Assets/BOTTLES/pink.png" id="5_n06bc"]
 
