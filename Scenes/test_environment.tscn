@@ -32,6 +32,8 @@ glow_bloom = 0.5
 
 [node name="Player" parent="." instance=ExtResource("1_ovar5")]
 position = Vector2(209, 80)
+speed = 150.0
+lerp_amount = 0.1
 
 [node name="RatTails" parent="." instance=ExtResource("5_ncdvc")]
 position = Vector2(65, 41)
