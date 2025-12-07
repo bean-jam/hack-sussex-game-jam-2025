@@ -1,7 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cjsrm5ao4rcjo"]
+[gd_scene load_steps=3 format=3 uid="uid://cjsrm5ao4rcjo"]
 
-[ext_resource type="PackedScene" uid="uid://cbkr5iw26j277" path="res://Scenes/test_environment.tscn" id="1_ebmjs"]
+[ext_resource type="PackedScene" uid="uid://d1fxs6vu0e52h" path="res://Scenes/main_level.tscn" id="1_ebmjs"]
+[ext_resource type="PackedScene" uid="uid://qk6tuvec3rs0" path="res://Scenes/main_menu.tscn" id="1_qxrlw"]
 
 [node name="Game" type="Node2D"]
 
-[node name="test-environment" parent="." instance=ExtResource("1_ebmjs")]
+[node name="MainMenu" parent="." instance=ExtResource("1_qxrlw")]
+game_scene = ExtResource("1_ebmjs")

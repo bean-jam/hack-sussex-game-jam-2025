@@ -1,0 +1,82 @@
+[gd_scene load_steps=25 format=3 uid="uid://d1fxs6vu0e52h"]
+
+[ext_resource type="Script" uid="uid://cvu1v5io66wgw" path="res://Scenes/main_level.gd" id="1_8ce4n"]
+[ext_resource type="PackedScene" uid="uid://dpdh7mbq21131" path="res://Scenes/room.tscn" id="1_q2fht"]
+[ext_resource type="PackedScene" uid="uid://bqn65togivj2c" path="res://Scenes/player.tscn" id="2_ikcpc"]
+[ext_resource type="PackedScene" uid="uid://bonbooj2bn18v" path="res://Scenes/item_container.tscn" id="3_7wxy1"]
+[ext_resource type="Resource" uid="uid://ubqmnoky64qc" path="res://Resources/Ingredients/rat_tail.tres" id="4_8ce4n"]
+[ext_resource type="Resource" uid="uid://dym8jnd8cn8dy" path="res://Resources/Ingredients/toad_leg.tres" id="5_o0i6v"]
+[ext_resource type="Resource" uid="uid://crxjivlet67gs" path="res://Resources/Ingredients/viper_venom.tres" id="6_1ubp3"]
+[ext_resource type="Resource" uid="uid://jwpx3sj2mv2k" path="res://Resources/Ingredients/leech.tres" id="7_oi0bv"]
+[ext_resource type="Resource" uid="uid://cviwqynmxmqa5" path="res://Resources/Ingredients/alligator_teeth.tres" id="8_yfdo3"]
+[ext_resource type="Resource" uid="uid://dauog3637hj2o" path="res://Resources/Ingredients/eagle_eyeball.tres" id="9_eckhq"]
+[ext_resource type="PackedScene" path="res://Scenes/spawner.tscn" id="10_i7ce5"]
+[ext_resource type="PackedScene" uid="uid://t6kjf3f3qmd8" path="res://Scenes/customer_spawner.tscn" id="11_2xkur"]
+[ext_resource type="PackedScene" uid="uid://bgbpas1hvaqxd" path="res://Scenes/customer1.tscn" id="12_edjj2"]
+[ext_resource type="Resource" uid="uid://bv7cnt615wfi5" path="res://Resources/Potions/contraceptive.tres" id="13_ehh7o"]
+[ext_resource type="Resource" uid="uid://x0jcgsgdedcm" path="res://Resources/Potions/grigri.tres" id="14_b8vxi"]
+[ext_resource type="Resource" uid="uid://ghofjgl6wiek" path="res://Resources/Potions/hot_jambalaya.tres" id="15_lkiyy"]
+[ext_resource type="Resource" uid="uid://dojpvdv6s0rlr" path="res://Resources/Potions/shortsightedness.tres" id="16_bm8oi"]
+[ext_resource type="Resource" uid="uid://kijqpqnpyu3w" path="res://Resources/Potions/warts_and_boils.tres" id="17_unjri"]
+[ext_resource type="Resource" uid="uid://c54qdveg835yt" path="res://Resources/Potions/yellow_fever_cure.tres" id="18_ddui2"]
+[ext_resource type="PackedScene" uid="uid://dyptvgkuseve0" path="res://Scenes/musicSFX.tscn" id="19_m5xbg"]
+[ext_resource type="PackedScene" uid="uid://lvb4m3hlaty3" path="res://Scenes/ui.tscn" id="20_4l012"]
+[ext_resource type="PackedScene" uid="uid://bngojq500isdm" path="res://Scenes/sfx.tscn" id="21_bhrpm"]
+[ext_resource type="PackedScene" uid="uid://67nktljkbhf" path="res://Scenes/crt.tscn" id="22_c1xrl"]
+
+[sub_resource type="Environment" id="Environment_xob32"]
+glow_enabled = true
+glow_bloom = 0.87
+glow_blend_mode = 0
+
+[node name="MainLevel" type="Node2D"]
+script = ExtResource("1_8ce4n")
+
+[node name="Room" parent="." instance=ExtResource("1_q2fht")]
+
+[node name="Player" parent="." instance=ExtResource("2_ikcpc")]
+position = Vector2(208, 96)
+
+[node name="RatTails" parent="." instance=ExtResource("3_7wxy1")]
+position = Vector2(65, 41)
+ingredient_data = ExtResource("4_8ce4n")
+
+[node name="ToadLegs" parent="." instance=ExtResource("3_7wxy1")]
+position = Vector2(97, 42)
+ingredient_data = ExtResource("5_o0i6v")
+
+[node name="ViperVenom" parent="." instance=ExtResource("3_7wxy1")]
+position = Vector2(128, 42)
+ingredient_data = ExtResource("6_1ubp3")
+
+[node name="Leechs" parent="." instance=ExtResource("3_7wxy1")]
+position = Vector2(289, 42)
+ingredient_data = ExtResource("7_oi0bv")
+
+[node name="AlligatorTeeth" parent="." instance=ExtResource("3_7wxy1")]
+position = Vector2(319, 42)
+ingredient_data = ExtResource("8_yfdo3")
+
+[node name="EagleEyeball" parent="." instance=ExtResource("3_7wxy1")]
+position = Vector2(351, 43)
+ingredient_data = ExtResource("9_eckhq")
+
+[node name="Spawner" parent="." instance=ExtResource("10_i7ce5")]
+
+[node name="CustomerSpawner" parent="." instance=ExtResource("11_2xkur")]
+customer_scene = ExtResource("12_edjj2")
+possible_orders = Array[Resource]([ExtResource("13_ehh7o"), ExtResource("14_b8vxi"), ExtResource("15_lkiyy"), ExtResource("16_bm8oi"), ExtResource("17_unjri"), ExtResource("18_ddui2")])
+
+[node name="MuiscSFX" parent="." instance=ExtResource("19_m5xbg")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource("20_4l012")]
+metadata/_edit_use_anchors_ = true
+
+[node name="SFX" parent="." instance=ExtResource("21_bhrpm")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_xob32")
+
+[node name="CRT" parent="." instance=ExtResource("22_c1xrl")]

@@ -1,6 +1,6 @@
 extends Node
 
-var game_length: float = 180.0
+var game_length: float = 18.0
 var consultation_fee: int = 2 
 var penalty_fee: int = 10 # <--- NEW: Cost for failing an order
 
@@ -23,6 +23,7 @@ var rat_score: int = 1
 var current_target_item: Item = null 
 
 func _ready():
+	reset_game()
 	time_left = game_length
 	
 	SignalBus.customer_at_desk.connect(_on_customer_at_desk)
@@ -115,6 +116,13 @@ func _on_rat_score_updated():
 	rat_score -= 1
 	SignalBus.rat_score_updated.emit(rat_score)
 	
+
+func reset_game():
+	score = 0
+	rat_score = 1
+	time_left = game_length
+	is_game_active = true
+	current_target_item = null
 
 func end_game():
 	is_game_active = false

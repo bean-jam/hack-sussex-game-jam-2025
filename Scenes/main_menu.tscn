@@ -1,0 +1,122 @@
+[gd_scene load_steps=6 format=3 uid="uid://qk6tuvec3rs0"]
+
+[ext_resource type="Script" uid="uid://bxaxp7m0ax4m8" path="res://Scripts/MainMenu.gd" id="1_28flt"]
+[ext_resource type="PackedScene" uid="uid://d1fxs6vu0e52h" path="res://Scenes/main_level.tscn" id="2_48xlc"]
+[ext_resource type="Texture2D" uid="uid://jfdhxxix8jey" path="res://Assets/Environment/FINAL_ENVI_BASE.png" id="3_1ehe0"]
+[ext_resource type="AudioStream" uid="uid://2srf6tuvblj8" path="res://Assets/Music/song_track.mp3" id="4_ce3w2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ehe0"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_28flt")
+game_scene = ExtResource("2_48xlc")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.5647059)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_1ehe0")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -47.5
+offset_right = 20.0
+offset_bottom = -24.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Clinique Voudou"
+
+[node name="MenuButtons" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -51.5
+offset_top = 85.5
+offset_right = 51.5
+offset_bottom = 186.5
+grow_horizontal = 2
+
+[node name="PlayButton" type="Button" parent="MenuButtons"]
+texture_filter = 1
+layout_mode = 2
+text = "Open Clinic"
+
+[node name="InstructionsButton" type="Button" parent="MenuButtons"]
+texture_filter = 1
+layout_mode = 2
+text = "How To Play"
+
+[node name="QuitButton" type="Button" parent="MenuButtons"]
+texture_filter = 1
+layout_mode = 2
+text = "Exit
+"
+
+[node name="InstructionsPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.0
+offset_top = -108.0
+offset_right = 208.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1ehe0")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="InstructionsPanel"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 31.0
+offset_right = 385.0
+offset_bottom = 146.0
+text = "The patients are lining up. They need your spiritual guidance... and your potions.
+
+Customers arrive at the desk. Read their woes.
+
+Check the Recipe at the top of the screen.
+
+Collect ingredients (Rats and Frogs) from the shelves.
+
+Drop them into the Cauldron to brew.
+
+Bring the potion to the customer before they leave!
+
+Warning: If you mix the wrong ingredients, you'll make sludge. Find a trash can or force a customer to drink it (at a cost)."
+
+[node name="BackButton" type="Button" parent="InstructionsPanel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 188.0
+offset_top = 156.0
+offset_right = 233.0
+offset_bottom = 187.0
+text = "Back
+"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ce3w2")
+volume_db = -9.905
+autoplay = true
