@@ -55,12 +55,12 @@ func change_direction():
 # ... (rest of the script is the same)
 func update_sprite_flip():
 	# Assumes your Sprite2D is a child named "Sprite2D"
-	if is_node_ready() and has_node("Sprite2D"):
-		$Sprite2D.flip_h = (direction == -1)
+	if is_node_ready() and has_node("AnimatedSprite2D"):
+		$AnimatedSprite2D.flip_h = (direction == 1)
 
 func _on_area_entered(area: Area2D):
 	# Check if the object we collided with is in the "rat" group
-	if area.is_in_group("rat") and area != self:
+	if area.is_in_group("Rat") and area != self:
 		direction *= -1
 		update_sprite_flip()
 		position.x += direction * 5 # Nudge away

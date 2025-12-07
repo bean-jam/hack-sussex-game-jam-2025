@@ -4,13 +4,11 @@
 [ext_resource type="Script" uid="uid://d3neoyj8wgaax" path="res://Scripts/potion.gd" id="2_81pp6"]
 [ext_resource type="Resource" uid="uid://ubqmnoky64qc" path="res://Resources/Ingredients/rat_tail.tres" id="2_u6d4u"]
 [ext_resource type="Resource" uid="uid://dauog3637hj2o" path="res://Resources/Ingredients/eagle_eyeball.tres" id="3_pilfk"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ft8c2"]
-size = Vector2(8, 8)
+[ext_resource type="Texture2D" uid="uid://co6aq40c0wol7" path="res://Assets/BOTTLES/green.png" id="5_pilfk"]
 
 [resource]
 script = ExtResource("2_81pp6")
 required_items = Array[ExtResource("1_mvf58")]([ExtResource("2_u6d4u"), ExtResource("2_u6d4u"), ExtResource("3_pilfk")])
 item_name = "Yellow Fever Cure"
-texture = SubResource("PlaceholderTexture2D_ft8c2")
+texture = ExtResource("5_pilfk")
 metadata/_custom_type_script = "uid://d3neoyj8wgaax"
