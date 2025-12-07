@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="HACKSUSSEXGAMEJAM2025"
-run/main_scene="uid://cjsrm5ao4rcjo"
+run/main_scene="uid://qk6tuvec3rs0"
 config/features=PackedStringArray("4.5", "Forward Plus")
 
 [autoload]
