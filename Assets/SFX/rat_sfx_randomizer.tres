@@ -11,5 +11,6 @@ stream_0/stream = ExtResource("1_au2f0")
 stream_0/weight = 2.695
 stream_1/stream = ExtResource("2_v2r5n")
 stream_2/stream = ExtResource("4_xvj6i")
-stream_2/weight = 0.1
+stream_2/weight = 0.3
 stream_3/stream = ExtResource("4_au2f0")
+stream_3/weight = 0.0

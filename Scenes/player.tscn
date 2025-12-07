@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bqn65togivj2c"]
+[gd_scene load_steps=25 format=3 uid="uid://bqn65togivj2c"]
 
 [ext_resource type="Script" uid="uid://6e524heq16j4" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://dww7o22eb273d" path="res://Assets/Sprites/WITCHDOCTOR-BWRUN.png" id="2_vgqql"]
@@ -139,6 +139,9 @@ size = Vector2(13, 32)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_cvnsp"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fkybt"]
+size = Vector2(25, 46.125)
+
 [node name="Player" type="CharacterBody2D"]
 z_index = 2
 collision_mask = 106
@@ -153,6 +156,7 @@ animation = &"sideways_walk"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_n7ghd")
 
@@ -165,3 +169,11 @@ collision_mask = 88
 visible = false
 position = Vector2(0, -24)
 texture = SubResource("PlaceholderTexture2D_cvnsp")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 80
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0.5, -15)
+shape = SubResource("RectangleShape2D_fkybt")

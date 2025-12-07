@@ -4,9 +4,10 @@ extends CharacterBody2D
 var held_item: Item = null
 
 # NODES
-@onready var interact_ray = $InteractRay
+# --- CHANGED: Replaced InteractRay with InteractionArea ---
+@onready var interaction_area = $InteractionArea 
 @onready var held_item_icon = $HeldItemIcon
-@onready var animated_sprite = $AnimatedSprite2D # <--- CHANGED: References AnimatedSprite2D
+@onready var animated_sprite = $AnimatedSprite2D
 
 # VARIABLES
 @export var speed = 150.0
@@ -26,21 +27,19 @@ func _physics_process(delta):
 	velocity = velocity.lerp(target_velocity, lerp_amount)
 	move_and_slide()
 	
-	# Interact raycast rotation
-	if input_vector != Vector2.ZERO:
-		interact_ray.target_position = input_vector * 40.0 
+	# --- REMOVED: Raycast rotation logic is no longer needed ---
+	# The Area2D surrounds the player, so we don't need to rotate it.
 	
 	# --- ANIMATION LOGIC ---
 	if input_vector.y > 0:
-		animated_sprite.play("forward_walk") # Down
+		animated_sprite.play("forward_walk")
 	elif input_vector.y < 0:
-		animated_sprite.play("backwards_walk") # Up
+		animated_sprite.play("backwards_walk")
 	elif input_vector.x != 0:
-		# Handle side walking
-		animated_sprite.flip_h = input_vector.x < 0 # Flip if moving left
-		animated_sprite.play("sideways_walk") # Ensure you have this animation, or use "forward_walk"
+		animated_sprite.flip_h = input_vector.x < 0
+		animated_sprite.play("sideways_walk")
 	else:
-		animated_sprite.play("idle") # Stop
+		animated_sprite.play("idle") 
 	# -----------------------
 
 	# INTERACTION INPUT
@@ -50,25 +49,45 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("drop"): 
 		drop_item()
 
+# --- NEW: Logic to find the closest interactable object ---
 func _attempt_interact():
-	if interact_ray.is_colliding():
-		var object = interact_ray.get_collider()
-		if object.has_method("interact"):
-			object.interact(self)
+	# 1. Get everything inside the circle
+	var overlapping_bodies = interaction_area.get_overlapping_bodies()
+	
+	# Note: If your items are Areas (not Bodies), use:
+	# var overlapping_areas = interaction_area.get_overlapping_areas()
+	# overlapping_bodies.append_array(overlapping_areas)
 
-# --- PUBLIC FUNCTIONS ---
+	var closest_obj = null
+	var closest_dist = INF # Start with 'Infinity'
+
+	# 2. Loop through them to find the closest valid one
+	for obj in overlapping_bodies:
+		if obj == self:
+			continue # Don't interact with yourself!
+			
+		if obj.has_method("interact"):
+			var dist = global_position.distance_squared_to(obj.global_position)
+			if dist < closest_dist:
+				closest_dist = dist
+				closest_obj = obj
+
+	# 3. Interact with the winner
+	if closest_obj:
+		closest_obj.interact(self)
+
+# --- PUBLIC FUNCTIONS (Unchanged) ---
 
 func pickup(item_resource: Resource):
 	if item_resource.resource_path.ends_with("rat_tail.tres"):
 		if GameManager.rat_score <= 0:
 			return
+		# Remember to use the fix from the previous question here!
+		GameManager.consume_rat_tail() 
 	
 	held_item = item_resource
 	print("Picked up: ", held_item.resource_path)
 	
-	if held_item.resource_path.ends_with("rat_tail.tres"):
-		SignalBus.rat_score_updated.emit()
-		
 	SignalBus.item_picked_up.emit()
 	update_visuals()
 
