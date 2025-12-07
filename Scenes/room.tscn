@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dpdh7mbq21131"]
+[gd_scene load_steps=14 format=3 uid="uid://dpdh7mbq21131"]
 
 [ext_resource type="Texture2D" uid="uid://jfdhxxix8jey" path="res://Assets/Environment/FINAL_ENVI_BASE.png" id="1_w77m5"]
 [ext_resource type="PackedScene" uid="uid://bo3sofng0w8s4" path="res://Scenes/desk.tscn" id="3_fchae"]
@@ -19,6 +19,14 @@ gradient = SubResource("Gradient_6mpvv")
 fill = 1
 fill_from = Vector2(0.49326146, 0.46495956)
 fill_to = Vector2(0.7277628, 0.3490566)
+
+[sub_resource type="Gradient" id="Gradient_gkney"]
+colors = PackedColorArray(0, 1, 0.4, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nfrpb"]
+gradient = SubResource("Gradient_gkney")
+fill = 1
+fill_from = Vector2(0.85983825, 0.50808626)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6mpvv"]
 size = Vector2(39, 227)
@@ -57,6 +65,11 @@ texture = SubResource("GradientTexture2D_gkney")
 [node name="CauldronLight" type="PointLight2D" parent="."]
 position = Vector2(208, 43)
 texture = SubResource("GradientTexture2D_6mpvv")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(314, 137.5)
+scale = Vector2(2.1562502, 0.5468751)
+texture = SubResource("GradientTexture2D_nfrpb")
 
 [node name="Boundaries" type="StaticBody2D" parent="."]
 collision_layer = 34
