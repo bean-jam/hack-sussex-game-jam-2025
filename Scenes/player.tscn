@@ -83,7 +83,7 @@ shape = SubResource("RectangleShape2D_n7ghd")
 [node name="InteractRay" type="RayCast2D" parent="."]
 scale = Vector2(3, 1)
 target_position = Vector2(0, -36)
-collision_mask = 24
+collision_mask = 88
 
 [node name="HeldItemIcon" type="Sprite2D" parent="."]
 visible = false
