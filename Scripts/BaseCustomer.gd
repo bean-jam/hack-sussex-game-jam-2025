@@ -64,11 +64,16 @@ func interact(player):
 
 # --- SIGNAL RESPONSES ---
 func _on_delivery_result(was_successful: bool):
+	# Only react if I am the one waiting at the desk
 	if current_state == State.WAITING:
+		
+		# Create a Tween (Animation)
+		var tween = create_tween()
+		
 		if was_successful:
 			print("Customer: Thank you!")
 			
-			# SUCCESS: Green Glow + Slightly Ghostly (0.8 Alpha)
+			# SUCCESS: Green Glow + Ghostly
 			modulate = Color(0.5, 2.0, 0.5, 0.8) 
 			
 			current_state = State.WALKING_OUT
@@ -77,11 +82,16 @@ func _on_delivery_result(was_successful: bool):
 		else:
 			print("Customer: This isn't what I asked for!")
 			
-			# FAILURE: Red Glow + Slightly Ghostly (0.8 Alpha)
+			# FAILURE: Red Glow + Ghostly
 			modulate = Color(2.0, 0.5, 0.5, 0.8)
 			
 			current_state = State.WALKING_OUT
 			order_bubble.visible = false
+
+		# FADE OUT EFFECT
+		# Animate the "alpha" (transparency) of the modulate color to 0 (Invisible)
+		# Duration: 1.5 seconds (Adjust this based on how fast they walk)
+		tween.tween_property(self, "modulate:a", 0.0, 2.2)
 
 # --- SETUP FUNCTION ---
 func setup_order(random_potion: Item):
