@@ -1,12 +1,10 @@
 [gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://dauog3637hj2o"]
 
-[ext_resource type="Script" path="res://Scripts/item.gd" id="1_8c257"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_hosi8"]
-size = Vector2(8, 8)
+[ext_resource type="Script" uid="uid://de2x6nu24bxkm" path="res://Scripts/item.gd" id="1_8c257"]
+[ext_resource type="Texture2D" uid="uid://tnn76cyroaha" path="res://Assets/INGREDIENTS/EYE.png" id="2_wobll"]
 
 [resource]
 script = ExtResource("1_8c257")
 item_name = "Eagle Eyeball"
-texture = SubResource("PlaceholderTexture2D_hosi8")
+texture = ExtResource("2_wobll")
 metadata/_custom_type_script = "uid://de2x6nu24bxkm"

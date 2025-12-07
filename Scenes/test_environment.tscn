@@ -16,7 +16,7 @@
 [ext_resource type="Resource" uid="uid://ghofjgl6wiek" path="res://Resources/Potions/hot_jambalaya.tres" id="15_0f4je"]
 [ext_resource type="Resource" uid="uid://dojpvdv6s0rlr" path="res://Resources/Potions/shortsightedness.tres" id="17_mxpae"]
 [ext_resource type="Resource" uid="uid://kijqpqnpyu3w" path="res://Resources/Potions/warts_and_boils.tres" id="18_0orn4"]
-[ext_resource type="PackedScene" uid="uid://detc1nugerftd" path="res://Scenes/ui.tscn" id="19_ff1bl"]
+[ext_resource type="PackedScene" uid="uid://lvb4m3hlaty3" path="res://Scenes/ui.tscn" id="19_ff1bl"]
 [ext_resource type="PackedScene" uid="uid://dpdh7mbq21131" path="res://Scenes/room.tscn" id="19_op7ht"]
 [ext_resource type="Resource" uid="uid://c54qdveg835yt" path="res://Resources/Potions/yellow_fever_cure.tres" id="19_qryae"]
 [ext_resource type="AudioStream" uid="uid://po5jrnmkn1tj" path="res://Assets/Music/Clinique_Voudou (Main Theme).wav" id="20_ff1bl"]
@@ -59,17 +59,6 @@ ingredient_data = ExtResource("10_mlaev")
 customer_scene = ExtResource("4_k0r8c")
 possible_orders = Array[Resource]([ExtResource("13_ff1bl"), ExtResource("14_3see1"), ExtResource("15_0f4je"), ExtResource("17_mxpae"), ExtResource("18_0orn4"), ExtResource("19_qryae")])
 
-[node name="UI" parent="." instance=ExtResource("19_ff1bl")]
-offset_left = -32.0
-offset_top = 3.0
-offset_right = 384.0
-offset_bottom = 219.0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("20_ff1bl")
-autoplay = true
-
-[node name="SFX" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("21_3see1")
-volume_db = -25.761
-autoplay = true
+[node name="UI" parent="CanvasLayer" instance=ExtResource("19_ff1bl")]

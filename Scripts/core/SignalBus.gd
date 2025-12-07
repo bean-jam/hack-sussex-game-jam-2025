@@ -3,7 +3,7 @@ extends Node
 # --- CUSTOMER FLOW ---
 # Emitted when the customer stops at the desk. 
 # The UI listens to this to show the bubble.
-signal customer_at_desk(customer_data) 
+signal customer_at_desk(potion) 
 
 # Emitted when the player interacts with the customer to give an item.
 # The Game Manager listens to this to check if the item matches the order.

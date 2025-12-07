@@ -1,11 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bonbooj2bn18v"]
+[gd_scene load_steps=3 format=3 uid="uid://bonbooj2bn18v"]
 
 [ext_resource type="Script" uid="uid://d2m2ajo4kskwb" path="res://Scripts/ItemContainer.gd" id="1_liojt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4u81j"]
 size = Vector2(6, 4)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_liojt"]
 
 [node name="ItemContainer" type="StaticBody2D"]
 collision_layer = 16
@@ -16,5 +14,3 @@ script = ExtResource("1_liojt")
 shape = SubResource("RectangleShape2D_4u81j")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(5.5, 4.5)
-texture = SubResource("PlaceholderTexture2D_liojt")
