@@ -37,6 +37,8 @@ func _process(delta):
 	if is_game_active:
 		time_left -= delta
 		
+		SignalBus.time_updated.emit(time_left)
+		
 		# Check for game over
 		if time_left <= 0:
 			time_left = 0

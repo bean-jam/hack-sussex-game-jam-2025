@@ -28,4 +28,5 @@ signal rat_score_updated(new_rat_score)
 signal score_updated(new_total_score)
 
 # Emitted when the timer hits 0.
+signal time_updated(current_time_left)
 signal day_ended
